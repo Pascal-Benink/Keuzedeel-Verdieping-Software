@@ -24,8 +24,8 @@ namespace MusicMaster
         public Form1()
         {
             InitializeComponent();
-            /*            player.settings.volume = Convert.ToInt16(textBox1.Text);
-                        label1.Text = "Now Playing: Nothing";*/
+            player.settings.volume = Decimal.ToInt32(Volume.Value);  
+            NowPlaying.Text = "Now Playing: Nothing";
         }
 
         private void MusicFolder_TextChanged(object sender, EventArgs e)
@@ -44,6 +44,41 @@ namespace MusicMaster
         }
 
         private void Volume_ValueChanged(object sender, EventArgs e)
+        {
+            player.settings.volume = Decimal.ToInt32(Volume.Value);
+        }
+
+        private void Pause_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Skip_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Mute_Click(object sender, EventArgs e)
+        {
+            player.settings.volume = 0;
+        }
+
+        private void Unmute_Click(object sender, EventArgs e)
+        {
+            player.settings.volume = Decimal.ToInt32(Volume.Value);
+        }
+
+        private void NowPlaying_Click(object sender, EventArgs e)
         {
 
         }

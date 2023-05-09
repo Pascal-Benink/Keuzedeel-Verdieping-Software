@@ -82,6 +82,7 @@
             NowPlaying.Size = new Size(115, 25);
             NowPlaying.TabIndex = 4;
             NowPlaying.Text = "Now Playing:";
+            NowPlaying.Click += NowPlaying_Click;
             // 
             // PlayButton
             // 
@@ -103,6 +104,7 @@
             Back.TabIndex = 6;
             Back.Text = "Back";
             Back.UseVisualStyleBackColor = true;
+            Back.Click += Back_Click;
             // 
             // Skip
             // 
@@ -113,6 +115,7 @@
             Skip.TabIndex = 7;
             Skip.Text = "Skip";
             Skip.UseVisualStyleBackColor = true;
+            Skip.Click += Skip_Click;
             // 
             // Pause
             // 
@@ -123,6 +126,7 @@
             Pause.TabIndex = 8;
             Pause.Text = "Pause";
             Pause.UseVisualStyleBackColor = true;
+            Pause.Click += Pause_Click;
             // 
             // Stop
             // 
@@ -133,6 +137,7 @@
             Stop.TabIndex = 9;
             Stop.Text = "Stop";
             Stop.UseVisualStyleBackColor = true;
+            Stop.Click += Stop_Click;
             // 
             // MuteIndicator
             // 
@@ -170,6 +175,7 @@
             Mute.TabIndex = 14;
             Mute.Text = "Mute";
             Mute.UseVisualStyleBackColor = true;
+            Mute.Click += Mute_Click;
             // 
             // Unmute
             // 
@@ -180,6 +186,7 @@
             Unmute.TabIndex = 15;
             Unmute.Text = "Unmute";
             Unmute.UseVisualStyleBackColor = true;
+            Unmute.Click += Unmute_Click;
             // 
             // Form1
             // 

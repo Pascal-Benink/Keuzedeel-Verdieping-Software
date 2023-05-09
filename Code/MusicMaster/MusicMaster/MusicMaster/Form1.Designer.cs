@@ -43,6 +43,7 @@
             Volume = new NumericUpDown();
             Mute = new Button();
             Unmute = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             SuspendLayout();
             // 
@@ -147,6 +148,7 @@
             MuteIndicator.Size = new Size(86, 25);
             MuteIndicator.TabIndex = 10;
             MuteIndicator.Text = "Unmuted";
+            MuteIndicator.Click += MuteIndicator_Click;
             // 
             // VolumeRange
             // 
@@ -188,11 +190,22 @@
             Unmute.UseVisualStyleBackColor = true;
             Unmute.Click += Unmute_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(167, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 25);
+            label1.TabIndex = 16;
+            label1.Text = "Geen Muziek gevonden";
+            label1.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(535, 294);
+            Controls.Add(label1);
             Controls.Add(Unmute);
             Controls.Add(Mute);
             Controls.Add(Volume);
@@ -232,5 +245,6 @@
         private NumericUpDown Volume;
         private Button Mute;
         private Button Unmute;
+        private Label label1;
     }
 }

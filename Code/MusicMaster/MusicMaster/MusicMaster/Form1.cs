@@ -28,7 +28,7 @@ namespace MusicMaster
         {
             // InitializeComponent needs to be first
             InitializeComponent();
-            // Do some prep  stuff
+            // Do some prep stuff
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             NowPlaying.Text = "Now Playing: Nothing";
             MusicFolder.Text = musicFolderPathdefault;

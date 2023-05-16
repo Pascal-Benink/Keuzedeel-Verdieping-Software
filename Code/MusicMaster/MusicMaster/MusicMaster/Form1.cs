@@ -16,32 +16,36 @@ namespace MusicMaster
 {
     public partial class Form1 : Form
     {
+        //declare a few variables
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         bool start = false;
         string[] musicFiles;
         int currentMusicIndex = 0;
         string musicFolderPath;
         string musicName;
+        string musicFolderPathdefault = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
         public Form1()
         {
+            // InitializeComponent needs to be first
             InitializeComponent();
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             NowPlaying.Text = "Now Playing: Nothing";
+            MusicFolder.Text = musicFolderPathdefault;
         }
 
         private void MusicFolder_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        //get musicFolderPath
         private void MusicFolderConfirm_Click(object sender, EventArgs e)
         {
             musicFolderPath = MusicFolder.Text;
         }
-
+        //play button
         private void PlayButton_Click(object sender, EventArgs e)
         {
-
+            //check if music has been started in this instance
             if (start == true)
             {
                 player.controls.play();
@@ -49,9 +53,11 @@ namespace MusicMaster
             }
             else
             {
+                //check if the musicFolderPath haf been confirmed
                 if (musicFolderPath != null)
                 {
                     musicFiles = Directory.GetFiles(musicFolderPath, "*.mp3", SearchOption.AllDirectories);
+                    // check if there are mote than 0 mificfiles in the folder
                     if (musicFiles.Length > 0)
                     {
                         IWMPPlaylist playlist = player.playlistCollection.newPlaylist("Music");
@@ -80,7 +86,7 @@ namespace MusicMaster
                 }
             }
         }
-
+        //change volume
         private void Volume_ValueChanged(object sender, EventArgs e)
         {
             player.settings.volume = Decimal.ToInt32(Volume.Value);
@@ -91,30 +97,20 @@ namespace MusicMaster
                 MuteIndicator.Text = "Muted";
             }
         }
-        private void Volume_TextChanged(object sender, EventArgs e)
-        {
-            player.settings.volume = Decimal.ToInt32(Volume.Value);
-            MuteIndicator.Text = "Unmuted";
-            if (Decimal.ToInt32(Volume.Value) == 0)
-            {
-                player.settings.volume = Decimal.ToInt32(Volume.Value);
-                MuteIndicator.Text = "Muted";
-            }
-        }
-
+        //pause button
         private void Pause_Click(object sender, EventArgs e)
         {
             NowPlaying.Text = "Now Paused: " + musicName;
             player.controls.pause();
         }
-
+        //stop button
         private void Stop_Click(object sender, EventArgs e)
         {
             NowPlaying.Text = "Now Playing: Nothing";
             player.controls.stop();
             start = false;
         }
-
+        // go 1 musicfile back
         private void Back_Click(object sender, EventArgs e)
         {
             if (player.currentPlaylist != null)
@@ -135,8 +131,8 @@ namespace MusicMaster
                 musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
                 NowPlaying.Text = "Now Playing: " + musicName;
             }
-            }
-
+        }
+            //skip 1 file
             private void Skip_Click(object sender, EventArgs e)
         {
             if (player.currentPlaylist != null)
@@ -158,29 +154,30 @@ namespace MusicMaster
                 NowPlaying.Text = "Now Playing: " + musicName;
             }
         }
-
+        //Mute button
         private void Mute_Click(object sender, EventArgs e)
         {
             player.settings.volume = 0;
             MuteIndicator.Text = "Muted";
 
         }
-
+        //unmute button
         private void Unmute_Click(object sender, EventArgs e)
         {
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             MuteIndicator.Text = "Unmuted";
         }
-
+        //let it stay
         private void NowPlaying_Click(object sender, EventArgs e)
         {
 
         }
-
+        //let it stay
         private void MuteIndicator_Click(object sender, EventArgs e)
         {
 
         }
+        //Detect if a new musicfile has started
         private void Player_PlayStateChange(int NewState)
         {
             // Check if the new state is "playing"

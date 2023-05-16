@@ -168,12 +168,12 @@ namespace MusicMaster
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             MuteIndicator.Text = "Unmuted";
         }
-        //let it stay
+        //let it stay-no function
         private void NowPlaying_Click(object sender, EventArgs e)
         {
 
         }
-        //let it stay
+        //let it stay-no function
         private void MuteIndicator_Click(object sender, EventArgs e)
         {
 

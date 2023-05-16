@@ -16,7 +16,7 @@ namespace MusicMaster
 {
     public partial class Form1 : Form
     {
-        //declare a few variables
+        //declare a initial few variables
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         bool start = false;
         string[] musicFiles;
@@ -28,6 +28,7 @@ namespace MusicMaster
         {
             // InitializeComponent needs to be first
             InitializeComponent();
+            // Do some prep  stuff
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             NowPlaying.Text = "Now Playing: Nothing";
             MusicFolder.Text = musicFolderPathdefault;

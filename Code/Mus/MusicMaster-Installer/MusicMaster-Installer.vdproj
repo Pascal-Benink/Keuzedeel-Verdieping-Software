@@ -216,7 +216,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MusicMaster"
         "ProductCode" = "8:{3B7F1214-08EA-47C0-BA77-89409A92B045}"
-        "PackageCode" = "8:{93BFBC79-8653-41C2-A2DD-DC71EFFECD17}"
+        "PackageCode" = "8:{0A247540-9EDC-4B3C-95C7-E1B187F311EA}"
         "UpgradeCode" = "8:{B9F973C5-E94F-4368-B3DD-153C863D2461}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -259,7 +259,7 @@
                         {
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_99184C32E7FE4E4CB24D28E77FA6FF20"
                             {
-                            "Name" = "8:[Manufacturer]"
+                            "Name" = "8:Coding Entreprice"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
                             "DeleteAtUninstall" = "11:FALSE"
@@ -293,7 +293,7 @@
                         {
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_49E85ABEAB3D4E679949A0F380B70B57"
                             {
-                            "Name" = "8:[Manufacturer]"
+                            "Name" = "8:Coding Entreprice"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
                             "DeleteAtUninstall" = "11:FALSE"
@@ -336,6 +336,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_38589EB8DE724D36B69B23876C4C23EB"
+            {
+            "Name" = "8:MusicMaster"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8F9D9B78E4AE446A99D2D8C223BF0A9E"
+            "Folder" = "8:_42C9B27654214695AB1C65500132F591"
+            "WorkingFolder" = "8:_3A82270A2A8B47A596F47853EFA6F64E"
+            "Icon" = "8:_870C689F6D3B437097EF0425247D15E4"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

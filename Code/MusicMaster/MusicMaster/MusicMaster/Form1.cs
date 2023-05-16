@@ -49,27 +49,34 @@ namespace MusicMaster
             }
             else
             {
-                musicFiles = Directory.GetFiles(musicFolderPath, "*.mp3", SearchOption.AllDirectories);
-                if (musicFiles.Length > 0)
+                if (musicFolderPath != null)
                 {
-                    IWMPPlaylist playlist = player.playlistCollection.newPlaylist("Music");
-
-                    foreach (string musicFile in musicFiles)
+                    musicFiles = Directory.GetFiles(musicFolderPath, "*.mp3", SearchOption.AllDirectories);
+                    if (musicFiles.Length > 0)
                     {
-                        IWMPMedia media = player.newMedia(musicFile);
-                        playlist.appendItem(media);
-                    }
+                        IWMPPlaylist playlist = player.playlistCollection.newPlaylist("Music");
 
-                    player.currentPlaylist = playlist;
-                    player.controls.play();
-                    player.PlayStateChange += Player_PlayStateChange;
-                    start = true;
-                    musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
-                    NowPlaying.Text = "Now Playing: " + musicName;
+                        foreach (string musicFile in musicFiles)
+                        {
+                            IWMPMedia media = player.newMedia(musicFile);
+                            playlist.appendItem(media);
+                        }
+
+                        player.currentPlaylist = playlist;
+                        player.controls.play();
+                        player.PlayStateChange += Player_PlayStateChange;
+                        start = true;
+                        musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
+                        NowPlaying.Text = "Now Playing: " + musicName;
+                    }
+                    else
+                    {
+                        MusicFolder.Text = "Geen Muziek gevonden";
+                    }
                 }
                 else
                 {
-                    MusicFolder.Text = "Geen Muziek gevonden";
+                    MusicFolder.Text = "Geen MuziekFolder gevonden";
                 }
             }
         }
@@ -78,6 +85,21 @@ namespace MusicMaster
         {
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             MuteIndicator.Text = "Unmuted";
+            if (Decimal.ToInt32(Volume.Value) == 0)
+            {
+                player.settings.volume = Decimal.ToInt32(Volume.Value);
+                MuteIndicator.Text = "Muted";
+            }
+        }
+        private void Volume_TextChanged(object sender, EventArgs e)
+        {
+            player.settings.volume = Decimal.ToInt32(Volume.Value);
+            MuteIndicator.Text = "Unmuted";
+            if (Decimal.ToInt32(Volume.Value) == 0)
+            {
+                player.settings.volume = Decimal.ToInt32(Volume.Value);
+                MuteIndicator.Text = "Muted";
+            }
         }
 
         private void Pause_Click(object sender, EventArgs e)

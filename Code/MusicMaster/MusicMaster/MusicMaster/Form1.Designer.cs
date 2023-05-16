@@ -53,7 +53,7 @@
             MusicFolder.Name = "MusicFolder";
             MusicFolder.Size = new Size(231, 31);
             MusicFolder.TabIndex = 0;
-            MusicFolder.Text = "C:\\Users\\2sam2\\Music";
+            MusicFolder.Text = "\r\n";
             MusicFolder.TextChanged += MusicFolder_TextChanged;
             // 
             // MusicFolderConfirm

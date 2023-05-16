@@ -132,8 +132,8 @@ namespace MusicMaster
                 NowPlaying.Text = "Now Playing: " + musicName;
             }
         }
-            //skip 1 file
-            private void Skip_Click(object sender, EventArgs e)
+        //skip 1 file
+        private void Skip_Click(object sender, EventArgs e)
         {
             if (player.currentPlaylist != null)
             {

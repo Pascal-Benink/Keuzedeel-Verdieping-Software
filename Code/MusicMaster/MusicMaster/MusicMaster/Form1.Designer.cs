@@ -215,7 +215,7 @@
             // StartPic
             // 
             StartPic.BackgroundImageLayout = ImageLayout.Center;
-            StartPic.Image = Properties.Resources.musicmaster1;
+            StartPic.Image = Properties.Resources.musicmaster___nocode;
             StartPic.Location = new Point(-1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
@@ -229,6 +229,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(535, 317);
+            Controls.Add(StartPic);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(Unmute);
@@ -245,7 +246,6 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
-            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(557, 373);
             MinimumSize = new Size(557, 373);

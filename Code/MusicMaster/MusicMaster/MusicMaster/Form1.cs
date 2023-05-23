@@ -22,9 +22,9 @@ namespace MusicMaster
         bool start = false;
         string[] musicFiles;
         int currentMusicIndex = 0;
-        string musicFolderPath;
         string musicName;
         string musicFolderPathdefault = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+        string musicFolderPath;
         public Form1()
         {
             // InitializeComponent needs to be first
@@ -33,16 +33,19 @@ namespace MusicMaster
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             NowPlaying.Text = "Now Playing: Nothing";
             MusicFolder.Text = musicFolderPathdefault;
-            var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            musicFolderPath = musicFolderPathdefault;
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
             var versiontxt = "V" + version;
+            /*var versiontxt2 = "V" + version.Major + "." + version.Minor + " (build " + version.Build + ")";*/
             label3.Text = versiontxt;
             var gitreleaseversion = "1.0.0.0";
             imgload();
-
         }
-        //make the statupscreen go away
+        //make the statupscreen change pic end go away 
         private async Task imgload()
         {
+            await Task.Delay(2000); // Wait for 2 seconds
+            StartPic.Image = MusicMaster.Properties.Resources.musicmaster1;
             await Task.Delay(2000); // Wait for 2 seconds
             StartPic.Visible = false;
         }
@@ -54,7 +57,6 @@ namespace MusicMaster
         //get musicFolderPath
         private void MusicFolderConfirm_Click(object sender, EventArgs e)
         {
-            /*musicFolderPath = MusicFolder.Text;*/
             using (var MusicFolderloc = new FolderBrowserDialog())
             {
                 DialogResult result = MusicFolderloc.ShowDialog();

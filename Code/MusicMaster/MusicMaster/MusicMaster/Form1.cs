@@ -213,6 +213,7 @@ namespace MusicMaster
                 // Update the NowPlaying label with the name of the current music file
                 musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
                 NowPlaying.Text = "Now Playing: " + musicName;
+                UpdateMusicTimeDisplay();
             }
         }
 
@@ -220,7 +221,41 @@ namespace MusicMaster
         {
 
         }
+        //let it stay-no function
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
+        // Update the music time display
+        private void UpdateMusicTimeDisplay()
+        {
+            // Get the current position of the playing music
+            double currentPosition = player.controls.currentPosition;
 
+            // Format the position as a time string
+            string musicTimeText = TimeSpan.FromSeconds(currentPosition).ToString(@"mm\:ss");
+
+            // Update the musicTime label with the current position
+            musictime.Text = musicTimeText;
+        }
+        //10sec skip
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var newpositien = player.controls.currentPosition + 10;
+            player.controls.currentPosition = newpositien;
+            UpdateMusicTimeDisplay();
+        }
+        //10sec back
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var newpositien = player.controls.currentPosition - 10;
+            player.controls.currentPosition = newpositien;
+            UpdateMusicTimeDisplay();
+        }
+        //let it stay-no function
+        private void musictime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

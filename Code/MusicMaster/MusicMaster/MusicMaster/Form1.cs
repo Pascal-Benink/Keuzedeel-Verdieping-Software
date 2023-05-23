@@ -49,7 +49,7 @@ namespace MusicMaster
             await Task.Delay(2000); // Wait for 2 seconds
             StartPic.Visible = false;
         }
-
+        //let it stay-no function
         private void MusicFolder_TextChanged(object sender, EventArgs e)
         {
 

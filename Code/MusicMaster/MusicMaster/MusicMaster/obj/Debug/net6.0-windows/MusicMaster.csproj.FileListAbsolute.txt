@@ -17,3 +17,4 @@ C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-So
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.pdb
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.genruntimeconfig.cache
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\ref\MusicMaster.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.Properties.Resources.resources

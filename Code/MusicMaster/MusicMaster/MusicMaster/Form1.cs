@@ -11,6 +11,7 @@ using System.IO;
 using WMPLib;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
+using System.Reflection;
 
 namespace MusicMaster
 {
@@ -32,6 +33,18 @@ namespace MusicMaster
             player.settings.volume = Decimal.ToInt32(Volume.Value);
             NowPlaying.Text = "Now Playing: Nothing";
             MusicFolder.Text = musicFolderPathdefault;
+            var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            var versiontxt = "V" + version;
+            label3.Text = versiontxt;
+            var gitreleaseversion = "1.0.0.0";
+            imgload();
+
+        }
+        //make the statupscreen go away
+        private async Task imgload()
+        {
+            await Task.Delay(2000); // Wait for 2 seconds
+            StartPic.Visible = false;
         }
 
         private void MusicFolder_TextChanged(object sender, EventArgs e)
@@ -54,11 +67,11 @@ namespace MusicMaster
             }
             else
             {
-                //check if the musicFolderPath haf been confirmed
+                //check if the musicFolderPath has been confirmed
                 if (musicFolderPath != null)
                 {
                     musicFiles = Directory.GetFiles(musicFolderPath, "*.mp3", SearchOption.AllDirectories);
-                    // check if there are mote than 0 mificfiles in the folder
+                    // check if there are more than 0 soundfiles in the folder
                     if (musicFiles.Length > 0)
                     {
                         IWMPPlaylist playlist = player.playlistCollection.newPlaylist("Music");
@@ -188,6 +201,11 @@ namespace MusicMaster
                 musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
                 NowPlaying.Text = "Now Playing: " + musicName;
             }
+        }
+
+        private void StartPic_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

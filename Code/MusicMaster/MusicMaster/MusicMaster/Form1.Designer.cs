@@ -44,7 +44,10 @@
             Mute = new Button();
             Unmute = new Button();
             label1 = new Label();
+            label3 = new Label();
+            StartPic = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             SuspendLayout();
             // 
             // MusicFolder
@@ -200,11 +203,34 @@
             label1.Text = "Geen Muziek gevonden";
             label1.Visible = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 288);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 25);
+            label3.TabIndex = 17;
+            label3.Text = "V(version)";
+            // 
+            // StartPic
+            // 
+            StartPic.BackgroundImageLayout = ImageLayout.Center;
+            StartPic.Image = (Image)resources.GetObject("StartPic.Image");
+            StartPic.Location = new Point(-1, -1);
+            StartPic.Name = "StartPic";
+            StartPic.Padding = new Padding(145, 0, 0, 0);
+            StartPic.Size = new Size(536, 321);
+            StartPic.TabIndex = 18;
+            StartPic.TabStop = false;
+            StartPic.Click += StartPic_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 294);
+            ClientSize = new Size(535, 317);
+            Controls.Add(StartPic);
+            Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(Unmute);
             Controls.Add(Mute);
@@ -221,10 +247,12 @@
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(557, 350);
+            MaximumSize = new Size(557, 373);
+            MinimumSize = new Size(557, 373);
             Name = "Form1";
             Text = "MusicMaster";
             ((System.ComponentModel.ISupportInitialize)Volume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)StartPic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -246,5 +274,7 @@
         private Button Mute;
         private Button Unmute;
         private Label label1;
+        private Label label3;
+        private PictureBox StartPic;
     }
 }

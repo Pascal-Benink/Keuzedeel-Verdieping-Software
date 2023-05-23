@@ -44,6 +44,7 @@ namespace MusicMaster
         //make the statupscreen change pic end go away 
         private async Task imgload()
         {
+
             await Task.Delay(2000); // Wait for 2 seconds
             StartPic.Image = MusicMaster.Properties.Resources.musicmaster;
             await Task.Delay(2000); // Wait for 2 seconds

@@ -247,6 +247,7 @@
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MaximumSize = new Size(557, 373);
             MinimumSize = new Size(557, 373);
             Name = "Form1";

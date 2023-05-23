@@ -63,9 +63,9 @@
             // 
             MusicFolderConfirm.Location = new Point(390, 10);
             MusicFolderConfirm.Name = "MusicFolderConfirm";
-            MusicFolderConfirm.Size = new Size(133, 31);
+            MusicFolderConfirm.Size = new Size(145, 31);
             MusicFolderConfirm.TabIndex = 1;
-            MusicFolderConfirm.Text = "Confirm";
+            MusicFolderConfirm.Text = "Search Music Folder";
             MusicFolderConfirm.UseVisualStyleBackColor = true;
             MusicFolderConfirm.Click += MusicFolderConfirm_Click;
             // 
@@ -215,7 +215,7 @@
             // StartPic
             // 
             StartPic.BackgroundImageLayout = ImageLayout.Center;
-            StartPic.Image = (Image)resources.GetObject("StartPic.Image");
+            StartPic.Image = Properties.Resources.musicmaster1;
             StartPic.Location = new Point(-1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
@@ -229,7 +229,6 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(535, 317);
-            Controls.Add(StartPic);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(Unmute);
@@ -246,6 +245,7 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
+            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(557, 373);
             MinimumSize = new Size(557, 373);

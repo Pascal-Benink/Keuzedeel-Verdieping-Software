@@ -54,7 +54,17 @@ namespace MusicMaster
         //get musicFolderPath
         private void MusicFolderConfirm_Click(object sender, EventArgs e)
         {
-            musicFolderPath = MusicFolder.Text;
+            /*musicFolderPath = MusicFolder.Text;*/
+            using (var MusicFolderloc = new FolderBrowserDialog())
+            {
+                DialogResult result = MusicFolderloc.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(MusicFolderloc.SelectedPath))
+                {
+                    musicFolderPath = MusicFolderloc.SelectedPath;
+                    MusicFolder.Text = musicFolderPath;
+                }
+            }
         }
         //play button
         private void PlayButton_Click(object sender, EventArgs e)
@@ -207,5 +217,7 @@ namespace MusicMaster
         {
 
         }
+
+
     }
 }

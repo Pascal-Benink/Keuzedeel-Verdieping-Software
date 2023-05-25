@@ -48,7 +48,9 @@
             StartPic = new PictureBox();
             button1 = new Button();
             button2 = new Button();
+            musictimetot = new Label();
             musictime = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             SuspendLayout();
@@ -222,7 +224,7 @@
             StartPic.Location = new Point(-1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
-            StartPic.Size = new Size(536, 360);
+            StartPic.Size = new Size(544, 360);
             StartPic.TabIndex = 18;
             StartPic.TabStop = false;
             StartPic.Click += StartPic_Click;
@@ -249,22 +251,42 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // musictimetot
+            // 
+            musictimetot.AutoSize = true;
+            musictimetot.Location = new Point(463, 71);
+            musictimetot.Name = "musictimetot";
+            musictimetot.Size = new Size(56, 25);
+            musictimetot.TabIndex = 21;
+            musictimetot.Text = "00:00";
+            musictimetot.Click += musictime_Click;
+            // 
             // musictime
             // 
             musictime.AutoSize = true;
-            musictime.Location = new Point(421, 71);
+            musictime.Location = new Point(401, 71);
             musictime.Name = "musictime";
             musictime.Size = new Size(56, 25);
-            musictime.TabIndex = 21;
+            musictime.TabIndex = 22;
             musictime.Text = "00:00";
-            musictime.Click += musictime_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(450, 71);
+            label5.Name = "label5";
+            label5.Size = new Size(19, 25);
+            label5.TabIndex = 23;
+            label5.Text = "/";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 358);
+            ClientSize = new Size(542, 358);
+            Controls.Add(label5);
             Controls.Add(musictime);
+            Controls.Add(musictimetot);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label3);
@@ -317,6 +339,8 @@
         private PictureBox StartPic;
         private Button button1;
         private Button button2;
+        private Label musictimetot;
         private Label musictime;
+        private Label label5;
     }
 }

@@ -12,6 +12,7 @@ using WMPLib;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace MusicMaster
 {
@@ -25,6 +26,7 @@ namespace MusicMaster
         string musicName;
         string musicFolderPathdefault = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
         string musicFolderPath;
+        bool playing = false;
         public Form1()
         {
             // InitializeComponent needs to be first
@@ -101,6 +103,19 @@ namespace MusicMaster
                         start = true;
                         musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
                         NowPlaying.Text = "Now Playing: " + musicName;
+                        UpdateMusicTotalTimeDisplay();
+                        bool playing = true;
+                        //run task to update musictime
+                        Task.Run(async () =>
+                        {
+                            while (playing == true)
+                            {
+                                //update music time
+                                UpdateMusicTimeDisplay();
+                                // wiat 200ms
+                                await Task.Delay(200);
+                            }
+                        });
                     }
                     else
                     {
@@ -129,6 +144,7 @@ namespace MusicMaster
         {
             NowPlaying.Text = "Now Paused: " + musicName;
             player.controls.pause();
+            bool playing = false;
         }
         //stop button
         private void Stop_Click(object sender, EventArgs e)
@@ -136,6 +152,7 @@ namespace MusicMaster
             NowPlaying.Text = "Now Playing: Nothing";
             player.controls.stop();
             start = false;
+            bool playing = false;
         }
         // go 1 musicfile back
         private void Back_Click(object sender, EventArgs e)
@@ -215,6 +232,7 @@ namespace MusicMaster
                 NowPlaying.Text = "Now Playing: " + musicName;
 
                 UpdateMusicTimeDisplay();
+                UpdateMusicTotalTimeDisplay();
             }
         }
 
@@ -238,6 +256,13 @@ namespace MusicMaster
 
             // Update the musicTime label with the current position
             musictime.Text = musicTimeText;
+        }
+        // Update the toal time
+        private void UpdateMusicTotalTimeDisplay()
+        {
+            var MusicTotalTIme = player.currentMedia.duration;
+            string MusicTotalTImes = TimeSpan.FromSeconds(MusicTotalTIme).ToString(@"mm\:ss");
+            musictimetot.Text = MusicTotalTImes;
         }
         //10sec skip
         private void button1_Click(object sender, EventArgs e)

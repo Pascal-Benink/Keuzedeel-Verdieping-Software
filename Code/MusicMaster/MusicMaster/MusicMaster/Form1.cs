@@ -213,6 +213,7 @@ namespace MusicMaster
                 // Update the NowPlaying label with the name of the current music file
                 musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
                 NowPlaying.Text = "Now Playing: " + musicName;
+
                 UpdateMusicTimeDisplay();
             }
         }

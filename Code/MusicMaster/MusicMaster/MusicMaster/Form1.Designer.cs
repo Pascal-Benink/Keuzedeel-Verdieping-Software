@@ -308,7 +308,8 @@
             Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MinimumSize = new Size(557, 373);
+            MaximumSize = new Size(564, 414);
+            MinimumSize = new Size(564, 414);
             Name = "Form1";
             Text = "MusicMaster";
             Load += Form1_Load;

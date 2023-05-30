@@ -51,12 +51,11 @@
             musictimetot = new Label();
             musictime = new Label();
             label5 = new Label();
-            Albumcover = new PictureBox();
+            AlbumCover = new PictureBox();
             label4 = new Label();
-            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Albumcover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
             SuspendLayout();
             // 
             // MusicFolder
@@ -90,7 +89,7 @@
             // NowPlaying
             // 
             NowPlaying.AutoSize = true;
-            NowPlaying.Location = new Point(80, 47);
+            NowPlaying.Location = new Point(62, 47);
             NowPlaying.Name = "NowPlaying";
             NowPlaying.Size = new Size(115, 25);
             NowPlaying.TabIndex = 4;
@@ -283,14 +282,15 @@
             label5.TabIndex = 23;
             label5.Text = "/";
             // 
-            // Albumcover
+            // AlbumCover
             // 
-            Albumcover.Location = new Point(-1, 30);
-            Albumcover.Name = "Albumcover";
-            Albumcover.Size = new Size(63, 54);
-            Albumcover.TabIndex = 24;
-            Albumcover.TabStop = false;
-            Albumcover.Click += Albumcover_Click;
+            AlbumCover.Location = new Point(-1, 30);
+            AlbumCover.Name = "AlbumCover";
+            AlbumCover.Size = new Size(63, 54);
+            AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            AlbumCover.TabIndex = 24;
+            AlbumCover.TabStop = false;
+            AlbumCover.Click += Albumcover_Click;
             // 
             // label4
             // 
@@ -301,23 +301,14 @@
             label4.TabIndex = 25;
             label4.Text = "label4";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(244, 342);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 25);
-            label6.TabIndex = 26;
-            label6.Text = "label6";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 374);
-            Controls.Add(label6);
+            ClientSize = new Size(543, 378);
+            Controls.Add(StartPic);
             Controls.Add(label4);
-            Controls.Add(Albumcover);
+            Controls.Add(AlbumCover);
             Controls.Add(label5);
             Controls.Add(musictime);
             Controls.Add(musictimetot);
@@ -339,16 +330,16 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
-            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MinimumSize = new Size(564, 414);
+            MaximumSize = new Size(565, 434);
+            MinimumSize = new Size(565, 434);
             Name = "Form1";
             Text = "MusicMaster";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)Volume).EndInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Albumcover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AlbumCover).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -377,8 +368,7 @@
         private Label musictimetot;
         private Label musictime;
         private Label label5;
-        private PictureBox Albumcover;
+        private PictureBox AlbumCover;
         private Label label4;
-        private Label label6;
     }
 }

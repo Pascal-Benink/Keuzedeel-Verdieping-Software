@@ -7,9 +7,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>MusicMaster</Title>
-	  <Version>0.9.8.5</Version>
-	  <AssemblyVersion>0.9.8.5</AssemblyVersion>
-	  <FileVersion>0.9.8.5</FileVersion>
+	  <Version>0.9.8.7</Version>
+	  <AssemblyVersion>0.9.8.7</AssemblyVersion>
+	  <FileVersion>0.9.8.7</FileVersion>
 	  <Copyright>Copyright © 2023</Copyright>
   </PropertyGroup>
 
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="taglib" Version="2.1.0" />
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>

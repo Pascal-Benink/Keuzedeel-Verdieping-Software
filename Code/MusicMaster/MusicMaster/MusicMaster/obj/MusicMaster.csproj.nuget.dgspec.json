@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj": {
-      "version": "0.9.8.5",
+      "version": "0.9.8.7",
       "restore": {
         "projectUniqueName": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
         "projectName": "MusicMaster",
@@ -47,9 +47,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "taglib": {
+            "TagLibSharp": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.3.0, )"
             }
           },
           "imports": [

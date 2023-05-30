@@ -7,6 +7,7 @@ C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-So
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\Interop.WMPLib.dll
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.csproj.ResolveComReference.cache
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.Form1.resources
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.Properties.Resources.resources
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.csproj.GenerateResource.cache
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.AssemblyInfoInputs.cache
@@ -17,7 +18,5 @@ C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-So
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.pdb
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.genruntimeconfig.cache
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\ref\MusicMaster.dll
-C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.Properties.Resources.resources
-C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\policy.2.0.taglib-sharp.dll
-C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\taglib-sharp.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\TagLibSharp.dll
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.csproj.CopyComplete

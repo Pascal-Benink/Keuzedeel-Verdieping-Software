@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using System.Reflection;
 using System.Threading.Tasks;
-using TagLib;
+using System.Diagnostics;
 
 namespace MusicMaster
 {
@@ -166,7 +166,7 @@ namespace MusicMaster
             player.controls.stop();
             start = false;
             bool playing = false;
-            Albumcover.Image = null;
+            AlbumCover.Image = null;
         }
         // go 1 musicfile back
         private void Back_Click(object sender, EventArgs e)
@@ -297,26 +297,27 @@ namespace MusicMaster
         //update album cover
         private void UpdateAlbumCover()
         {
-            
-            if (musicFiles != null && currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
+            string currentMusicFile = player.currentMedia.sourceURL;
+
+            if (File.Exists(currentMusicFile))
             {
-                TagLib.File file = TagLib.File.Create(musicFiles[currentMusicIndex]);
-                TagLib.IPicture albumCover = file.Tag.Pictures.FirstOrDefault();
-                if (albumCover != null)
+                var file = TagLib.File.Create(currentMusicFile);
+
+                if (file.Tag.Pictures.Length >= 1)
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(albumCover.Data.Data))
-                    {
-                        Albumcover.Image = Image.FromStream(memoryStream);
-                    }
+                    var picture = file.Tag.Pictures[0];
+                    var memoryStream = new MemoryStream(picture.Data.Data);
+                    AlbumCover.Image = Image.FromStream(memoryStream);
+                    AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
-                    // If no album cover is available, you can set a default image
-                    Albumcover.Image = Properties.Resources.DefaultAlbumCover;
+                    // Clear the PictureBox if no album cover is available
+                    AlbumCover.Image = null;
                 }
             }
         }
-                //10sec skip
+        //10sec skip
         private void button1_Click(object sender, EventArgs e)
         {
             var newpositien = player.controls.currentPosition + 10;

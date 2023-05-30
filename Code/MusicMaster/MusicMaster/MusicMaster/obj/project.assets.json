@@ -2,38 +2,43 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "taglib/2.1.0": {
+      "TagLibSharp/2.3.0": {
         "type": "package",
         "compile": {
-          "lib/policy.2.0.taglib-sharp.dll": {},
-          "lib/taglib-sharp.dll": {}
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/policy.2.0.taglib-sharp.dll": {},
-          "lib/taglib-sharp.dll": {}
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
         }
       }
     }
   },
   "libraries": {
-    "taglib/2.1.0": {
-      "sha512": "PuBT0KO/RJqxVKcM4tE0GDQIOA3584d2pHaLLh+X7tBz9MzFn9/mrVYaA63M+n7ED2dBXVtJBoogGnSxaqE7vg==",
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
       "type": "package",
-      "path": "taglib/2.1.0",
+      "path": "taglibsharp/2.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/policy.2.0.taglib-sharp.config",
-        "lib/policy.2.0.taglib-sharp.dll",
-        "lib/taglib-sharp.dll",
-        "taglib.2.1.0.nupkg.sha512",
-        "taglib.nuspec"
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "taglib >= 2.1.0"
+      "TagLibSharp >= 2.3.0"
     ]
   },
   "packageFolders": {
@@ -42,7 +47,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "0.9.8.5",
+    "version": "0.9.8.7",
     "restore": {
       "projectUniqueName": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
       "projectName": "MusicMaster",
@@ -84,9 +89,9 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "taglib": {
+          "TagLibSharp": {
             "target": "Package",
-            "version": "[2.1.0, )"
+            "version": "[2.3.0, )"
           }
         },
         "imports": [
@@ -111,17 +116,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'taglib 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "taglib",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

@@ -1,4 +1,2 @@
 ﻿To Do List:
-Make auto updating current file time work
-make the label of thesichile say artist ans song name
 Add file cover (if possible)

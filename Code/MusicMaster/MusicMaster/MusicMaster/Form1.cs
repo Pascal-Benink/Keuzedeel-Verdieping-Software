@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using System.Reflection;
 using System.Threading.Tasks;
+using TagLib;
 
 namespace MusicMaster
 {
@@ -24,6 +25,8 @@ namespace MusicMaster
         string[] musicFiles;
         int currentMusicIndex = 0;
         string musicName;
+        string musicmake;
+        string musicdisplay;
         string musicFolderPathdefault = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
         string musicFolderPath;
         bool playing = false;
@@ -101,8 +104,15 @@ namespace MusicMaster
                         player.controls.play();
                         player.PlayStateChange += Player_PlayStateChange;
                         start = true;
-                        musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
-                        NowPlaying.Text = "Now Playing: " + musicName;
+                        /*musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
+                        musicName = player.currentMedia.getItemInfo("Title");
+                        musicmake = player.currentMedia.getItemInfo("Artist");
+                        musicdisplay = musicName + " - " + musicmake;
+                        NowPlaying.Text = "Now Playing: " + musicdisplay;
+                        //display album cover
+                        currentMusicIndex = player.currentPlaylist.count;
+                        UpdateAlbumCover();
+
                         UpdateMusicTotalTimeDisplay();
                         bool playing = true;
                         //run task to update musictime
@@ -142,7 +152,10 @@ namespace MusicMaster
         //pause button
         private void Pause_Click(object sender, EventArgs e)
         {
-            NowPlaying.Text = "Now Paused: " + musicName;
+            musicName = player.currentMedia.getItemInfo("Title");
+            musicmake = player.currentMedia.getItemInfo("Artist");
+            musicdisplay = musicName + " - " + musicmake;
+            NowPlaying.Text = "Now Paused: " + musicdisplay;
             player.controls.pause();
             bool playing = false;
         }
@@ -153,6 +166,7 @@ namespace MusicMaster
             player.controls.stop();
             start = false;
             bool playing = false;
+            Albumcover.Image = null;
         }
         // go 1 musicfile back
         private void Back_Click(object sender, EventArgs e)
@@ -170,10 +184,16 @@ namespace MusicMaster
                     // Go to the previous track
                     player.controls.previous();
                 }
+                currentMusicIndex = player.currentPlaylist.count;
 
                 // Update label with current track information
-                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
-                NowPlaying.Text = "Now Playing: " + musicName;
+                musicName = player.currentMedia.getItemInfo("Title");
+                musicmake = player.currentMedia.getItemInfo("Artist");
+                musicdisplay = musicName + " - " + musicmake;
+                NowPlaying.Text = "Now Playing: " + musicdisplay;
+                //display album cover
+                UpdateAlbumCover();
+
             }
         }
         //skip 1 file
@@ -192,10 +212,16 @@ namespace MusicMaster
                     // Go to the next track
                     player.controls.next();
                 }
+                currentMusicIndex = player.currentPlaylist.count;
+
 
                 // Update label with current track information
-                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
-                NowPlaying.Text = "Now Playing: " + musicName;
+                /*                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
+                musicName = player.currentMedia.getItemInfo("Title");
+                musicmake = player.currentMedia.getItemInfo("Artist");
+                musicdisplay = musicName + " - " + musicmake;
+                //display album cover
+                UpdateAlbumCover();
             }
         }
         //Mute button
@@ -228,10 +254,14 @@ namespace MusicMaster
             if ((WMPPlayState)NewState == WMPPlayState.wmppsPlaying)
             {
                 // Update the NowPlaying label with the name of the current music file
-                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);
-                NowPlaying.Text = "Now Playing: " + musicName;
+                /*musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
+                musicName = player.currentMedia.getItemInfo("Title");
+                musicmake = player.currentMedia.getItemInfo("Artist");
+                musicdisplay = musicName + " - " + musicmake;
+                NowPlaying.Text = "Now Playing: " + musicdisplay;
+                //display album cover
+                UpdateAlbumCover();
 
-                UpdateMusicTimeDisplay();
                 UpdateMusicTotalTimeDisplay();
             }
         }
@@ -264,7 +294,29 @@ namespace MusicMaster
             string MusicTotalTImes = TimeSpan.FromSeconds(MusicTotalTIme).ToString(@"mm\:ss");
             musictimetot.Text = MusicTotalTImes;
         }
-        //10sec skip
+        //update album cover
+        private void UpdateAlbumCover()
+        {
+            
+            if (musicFiles != null && currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
+            {
+                TagLib.File file = TagLib.File.Create(musicFiles[currentMusicIndex]);
+                TagLib.IPicture albumCover = file.Tag.Pictures.FirstOrDefault();
+                if (albumCover != null)
+                {
+                    using (MemoryStream memoryStream = new MemoryStream(albumCover.Data.Data))
+                    {
+                        Albumcover.Image = Image.FromStream(memoryStream);
+                    }
+                }
+                else
+                {
+                    // If no album cover is available, you can set a default image
+                    Albumcover.Image = Properties.Resources.DefaultAlbumCover;
+                }
+            }
+        }
+                //10sec skip
         private void button1_Click(object sender, EventArgs e)
         {
             var newpositien = player.controls.currentPosition + 10;
@@ -280,6 +332,11 @@ namespace MusicMaster
         }
         //let it stay-no function
         private void musictime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Albumcover_Click(object sender, EventArgs e)
         {
 
         }

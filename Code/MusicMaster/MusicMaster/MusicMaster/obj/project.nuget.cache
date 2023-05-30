@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "mXKOXCIwWfMkVzyKurphg5aBpovSXGBF41W79Cx1+QmsK7jgUtvhNO5EEwTYChcmOFR66u9a5MOrgUDwSOUhkg==",
+  "dgSpecHash": "AeumX3pzIg+zRa3fMPI5aK3ZVNsi+8PRhbM9pygRdyh8EGxUkOc9bIY5VVgwpf6ILm6lcwncEZLXY8x5Gtw1Fg==",
   "success": true,
   "projectFilePath": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\2sam2\\.nuget\\packages\\taglib\\2.1.0\\taglib.2.1.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'taglib 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "taglib",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

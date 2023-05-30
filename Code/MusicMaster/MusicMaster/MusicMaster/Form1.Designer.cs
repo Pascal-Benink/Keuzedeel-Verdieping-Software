@@ -51,8 +51,12 @@
             musictimetot = new Label();
             musictime = new Label();
             label5 = new Label();
+            Albumcover = new PictureBox();
+            label4 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Albumcover).BeginInit();
             SuspendLayout();
             // 
             // MusicFolder
@@ -86,7 +90,7 @@
             // NowPlaying
             // 
             NowPlaying.AutoSize = true;
-            NowPlaying.Location = new Point(3, 36);
+            NowPlaying.Location = new Point(80, 47);
             NowPlaying.Name = "NowPlaying";
             NowPlaying.Size = new Size(115, 25);
             NowPlaying.TabIndex = 4;
@@ -95,7 +99,7 @@
             // 
             // PlayButton
             // 
-            PlayButton.Location = new Point(4, 166);
+            PlayButton.Location = new Point(4, 177);
             PlayButton.Name = "PlayButton";
             PlayButton.RightToLeft = RightToLeft.No;
             PlayButton.Size = new Size(380, 49);
@@ -106,7 +110,7 @@
             // 
             // Back
             // 
-            Back.Location = new Point(4, 71);
+            Back.Location = new Point(4, 82);
             Back.Name = "Back";
             Back.RightToLeft = RightToLeft.No;
             Back.Size = new Size(182, 41);
@@ -117,7 +121,7 @@
             // 
             // Skip
             // 
-            Skip.Location = new Point(192, 71);
+            Skip.Location = new Point(192, 82);
             Skip.Name = "Skip";
             Skip.RightToLeft = RightToLeft.No;
             Skip.Size = new Size(192, 41);
@@ -128,7 +132,7 @@
             // 
             // Pause
             // 
-            Pause.Location = new Point(4, 221);
+            Pause.Location = new Point(4, 232);
             Pause.Name = "Pause";
             Pause.RightToLeft = RightToLeft.No;
             Pause.Size = new Size(380, 49);
@@ -139,7 +143,7 @@
             // 
             // Stop
             // 
-            Stop.Location = new Point(4, 276);
+            Stop.Location = new Point(4, 287);
             Stop.Name = "Stop";
             Stop.RightToLeft = RightToLeft.No;
             Stop.Size = new Size(380, 49);
@@ -151,7 +155,7 @@
             // MuteIndicator
             // 
             MuteIndicator.AutoSize = true;
-            MuteIndicator.Location = new Point(408, 102);
+            MuteIndicator.Location = new Point(408, 113);
             MuteIndicator.Name = "MuteIndicator";
             MuteIndicator.Size = new Size(86, 25);
             MuteIndicator.TabIndex = 10;
@@ -161,7 +165,7 @@
             // VolumeRange
             // 
             VolumeRange.AutoSize = true;
-            VolumeRange.Location = new Point(396, 131);
+            VolumeRange.Location = new Point(396, 142);
             VolumeRange.Name = "VolumeRange";
             VolumeRange.Size = new Size(124, 25);
             VolumeRange.TabIndex = 11;
@@ -169,7 +173,7 @@
             // 
             // Volume
             // 
-            Volume.Location = new Point(394, 176);
+            Volume.Location = new Point(394, 187);
             Volume.Name = "Volume";
             Volume.Size = new Size(130, 31);
             Volume.TabIndex = 13;
@@ -178,7 +182,7 @@
             // 
             // Mute
             // 
-            Mute.Location = new Point(393, 221);
+            Mute.Location = new Point(393, 232);
             Mute.Name = "Mute";
             Mute.RightToLeft = RightToLeft.No;
             Mute.Size = new Size(130, 49);
@@ -189,7 +193,7 @@
             // 
             // Unmute
             // 
-            Unmute.Location = new Point(394, 276);
+            Unmute.Location = new Point(394, 287);
             Unmute.Name = "Unmute";
             Unmute.RightToLeft = RightToLeft.No;
             Unmute.Size = new Size(130, 47);
@@ -201,7 +205,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(167, 36);
+            label1.Location = new Point(244, 47);
             label1.Name = "label1";
             label1.Size = new Size(198, 25);
             label1.TabIndex = 16;
@@ -211,7 +215,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 328);
+            label3.Location = new Point(12, 342);
             label3.Name = "label3";
             label3.Size = new Size(90, 25);
             label3.TabIndex = 17;
@@ -224,14 +228,14 @@
             StartPic.Location = new Point(-1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
-            StartPic.Size = new Size(544, 360);
+            StartPic.Size = new Size(544, 377);
             StartPic.TabIndex = 18;
             StartPic.TabStop = false;
             StartPic.Click += StartPic_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(192, 118);
+            button1.Location = new Point(192, 129);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(192, 41);
@@ -242,7 +246,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(4, 119);
+            button2.Location = new Point(4, 130);
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
             button2.Size = new Size(182, 41);
@@ -254,7 +258,7 @@
             // musictimetot
             // 
             musictimetot.AutoSize = true;
-            musictimetot.Location = new Point(463, 71);
+            musictimetot.Location = new Point(463, 82);
             musictimetot.Name = "musictimetot";
             musictimetot.Size = new Size(56, 25);
             musictimetot.TabIndex = 21;
@@ -264,7 +268,7 @@
             // musictime
             // 
             musictime.AutoSize = true;
-            musictime.Location = new Point(401, 71);
+            musictime.Location = new Point(401, 82);
             musictime.Name = "musictime";
             musictime.Size = new Size(56, 25);
             musictime.TabIndex = 22;
@@ -273,17 +277,47 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(450, 71);
+            label5.Location = new Point(450, 82);
             label5.Name = "label5";
             label5.Size = new Size(19, 25);
             label5.TabIndex = 23;
             label5.Text = "/";
             // 
+            // Albumcover
+            // 
+            Albumcover.Location = new Point(-1, 30);
+            Albumcover.Name = "Albumcover";
+            Albumcover.Size = new Size(63, 54);
+            Albumcover.TabIndex = 24;
+            Albumcover.TabStop = false;
+            Albumcover.Click += Albumcover_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(107, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 25);
+            label4.TabIndex = 25;
+            label4.Text = "label4";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(244, 342);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 25);
+            label6.TabIndex = 26;
+            label6.Text = "label6";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 358);
+            ClientSize = new Size(542, 374);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(Albumcover);
             Controls.Add(label5);
             Controls.Add(musictime);
             Controls.Add(musictimetot);
@@ -308,13 +342,13 @@
             Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(564, 414);
             MinimumSize = new Size(564, 414);
             Name = "Form1";
             Text = "MusicMaster";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)Volume).EndInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Albumcover).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -343,5 +377,8 @@
         private Label musictimetot;
         private Label musictime;
         private Label label5;
+        private PictureBox Albumcover;
+        private Label label4;
+        private Label label6;
     }
 }

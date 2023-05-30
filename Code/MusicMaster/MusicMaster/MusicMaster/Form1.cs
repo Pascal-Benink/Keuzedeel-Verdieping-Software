@@ -306,7 +306,7 @@ namespace MusicMaster
         {
             string currentMusicFile = player.currentMedia.sourceURL;
 
-            if (File.Exists(currentMusicFile))
+            if (System.IO.File.Exists(currentMusicFile))
             {
                 var file = TagLib.File.Create(currentMusicFile);
 

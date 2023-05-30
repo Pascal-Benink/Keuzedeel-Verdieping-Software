@@ -20,3 +20,4 @@ C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-So
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\ref\MusicMaster.dll
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\TagLibSharp.dll
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.csproj.CopyComplete
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

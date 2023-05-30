@@ -14,6 +14,11 @@ using System.Reflection.Emit;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Security.Policy;
+using System.Net.Http.Headers;
+using System.Windows;
 
 namespace MusicMaster
 {
@@ -45,6 +50,7 @@ namespace MusicMaster
             label3.Text = versiontxt;
             var gitreleaseversion = "1.0.0.0";
             imgload();
+            GetLatestRelease();
         }
         //make the statupscreen change pic end go away 
         private async Task imgload()
@@ -341,6 +347,68 @@ namespace MusicMaster
         private void Albumcover_Click(object sender, EventArgs e)
         {
 
+        }
+        //github version checker
+        private async Task GetLatestRelease()
+        {
+            string apiUrl = "https://api.github.com/repos/Pascal-Benink/MusicMaster/releases/latest";
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "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");
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; MSIE 11.0; Windows NT 10.0; WOW64; Trident/7.0)");
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string currentgithubversion = "v1.1.0.0";
+                        string json = await response.Content.ReadAsStringAsync();
+                        dynamic release = JsonConvert.DeserializeObject(json);
+                        string tagName = release.tag_name;
+                        /*label6.Text = "Latest Release Tag: " + tagName;*/
+                        if (tagName == currentgithubversion)
+                        {
+
+                        }
+                        else
+                        {
+                            NewVersion.Visible = true;
+                            NewVersion.Text = $"Version {tagName} of MusicMaster Is Out Click Here To Download" +
+                                $" You Rurrent version is {currentgithubversion}";
+                            button3.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        label6.Visible = true;
+                        label6.Text = "Failed to retrieve latest release.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    label6.Visible = true;
+                    label6.Text = "An error occurred: " + ex.Message;
+                }
+            }
+        }
+
+        private void NewVersion_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/Pascal-Benink/MusicMaster/releases/latest";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NewVersion.Visible = false;
+            button3.Visible = false;
         }
     }
 }

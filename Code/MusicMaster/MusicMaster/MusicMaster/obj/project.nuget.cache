@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lZ26kBbt7PiOvot9u2f+qGSEtbeSvp23UXtaZ5aQf+FLKmNLVsAK5Brykym/67vnCI0q7fgaOWkfXcMQEPnwDA==",
+  "dgSpecHash": "szz9/4xD7GKvKjjY8I/y3X7MWBDbFKOSxdxTwSoykHDi2CTBSBAeOhKAGQ8JNCYQTHa5PIFt0xQEC0Ro1qdQ+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\2sam2\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\2sam2\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
   ],
   "logs": []

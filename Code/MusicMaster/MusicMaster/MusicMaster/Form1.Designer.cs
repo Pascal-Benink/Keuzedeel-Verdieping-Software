@@ -227,7 +227,8 @@
             StartPic.Location = new Point(-1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
-            StartPic.Size = new Size(544, 377);
+            StartPic.Size = new Size(611, 614);
+            StartPic.SizeMode = PictureBoxSizeMode.AutoSize;
             StartPic.TabIndex = 18;
             StartPic.TabStop = false;
             StartPic.Click += StartPic_Click;
@@ -300,6 +301,7 @@
             label4.Size = new Size(59, 25);
             label4.TabIndex = 25;
             label4.Text = "label4";
+            label4.Visible = false;
             // 
             // Form1
             // 

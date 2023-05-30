@@ -313,7 +313,8 @@ namespace MusicMaster
                 else
                 {
                     // Clear the PictureBox if no album cover is available
-                    AlbumCover.Image = null;
+                    AlbumCover.Image = MusicMaster.Properties.Resources.DefaultAlbumCover;
+                    AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
         }

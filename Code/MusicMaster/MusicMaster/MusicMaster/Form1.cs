@@ -19,6 +19,7 @@ using Newtonsoft.Json;
 using System.Security.Policy;
 using System.Net.Http.Headers;
 using System.Windows;
+using TagLib.Mpeg;
 
 namespace MusicMaster
 {
@@ -364,7 +365,7 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v1.1.0.0";
+                        string currentgithubversion = "v" + Assembly.GetExecutingAssembly().GetName().Version;
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;
@@ -380,11 +381,6 @@ namespace MusicMaster
                                 $" You Rurrent version is {currentgithubversion}";
                             button3.Visible = true;
                         }
-                    }
-                    else
-                    {
-                        label6.Visible = true;
-                        label6.Text = "Failed to retrieve latest release.";
                     }
                 }
                 catch (Exception ex)

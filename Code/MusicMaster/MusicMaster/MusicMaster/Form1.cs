@@ -330,14 +330,12 @@ namespace MusicMaster
         {
             var newpositien = player.controls.currentPosition + 10;
             player.controls.currentPosition = newpositien;
-            UpdateMusicTimeDisplay();
         }
         //10sec back
         private void button2_Click(object sender, EventArgs e)
         {
             var newpositien = player.controls.currentPosition - 10;
             player.controls.currentPosition = newpositien;
-            UpdateMusicTimeDisplay();
         }
         //let it stay-no function
         private void musictime_Click(object sender, EventArgs e)

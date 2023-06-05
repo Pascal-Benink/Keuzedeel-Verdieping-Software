@@ -122,7 +122,7 @@ namespace MusicMaster
                         UpdateAlbumCover();
 
                         UpdateMusicTotalTimeDisplay();
-                        bool playing = true;
+                        playing = true;
                         //run task to update musictime
                         Task.Run(async () =>
                         {
@@ -165,7 +165,7 @@ namespace MusicMaster
             musicdisplay = musicName + " - " + musicmake;
             NowPlaying.Text = "Now Paused: " + musicdisplay;
             player.controls.pause();
-            bool playing = false;
+            playing = false;
         }
         //stop button
         private void Stop_Click(object sender, EventArgs e)
@@ -173,63 +173,78 @@ namespace MusicMaster
             NowPlaying.Text = "Now Playing: Nothing";
             player.controls.stop();
             start = false;
-            bool playing = false;
+            playing = false;
             AlbumCover.Image = null;
         }
         // go 1 musicfile back
         private void Back_Click(object sender, EventArgs e)
         {
-            if (player.currentPlaylist != null)
+            if (playing == false)
             {
-                // Check if current track is the first track in the playlist
-                if (player.controls.currentItem == player.currentPlaylist.Item[0])
-                {
-                    // Loop back to the last track
-                    player.controls.currentItem = player.currentPlaylist.Item[player.currentPlaylist.count - 1];
-                }
-                else
-                {
-                    // Go to the previous track
-                    player.controls.previous();
-                }
-                currentMusicIndex = player.currentPlaylist.count;
 
-                // Update label with current track information
-                musicName = player.currentMedia.getItemInfo("Title");
-                musicmake = player.currentMedia.getItemInfo("Artist");
-                musicdisplay = musicName + " - " + musicmake;
-                NowPlaying.Text = "Now Playing: " + musicdisplay;
-                //display album cover
-                UpdateAlbumCover();
+            }
+            else
+            {
+                if (player.currentPlaylist != null)
+                {
+                    // Check if current track is the first track in the playlist
+                    if (player.controls.currentItem == player.currentPlaylist.Item[0])
+                    {
+                        // Loop back to the last track
+                        player.controls.currentItem = player.currentPlaylist.Item[player.currentPlaylist.count - 1];
+                    }
+                    else
+                    {
+                        // Go to the previous track
+                        player.controls.previous();
+                    }
+                    currentMusicIndex = player.currentPlaylist.count;
 
+                    // Update label with current track information
+                    musicName = player.currentMedia.getItemInfo("Title");
+                    musicmake = player.currentMedia.getItemInfo("Artist");
+                    musicdisplay = musicName + " - " + musicmake;
+                    NowPlaying.Text = "Now Playing: " + musicdisplay;
+                    //display album cover
+                    UpdateAlbumCover();
+                    SkipRegulator();
+                }
             }
         }
         //skip 1 file
         private void Skip_Click(object sender, EventArgs e)
         {
-            if (player.currentPlaylist != null)
+            if (playing == false)
             {
-                // Check if current track is the last track in the playlist
-                if (player.controls.currentItem == player.currentPlaylist.Item[player.currentPlaylist.count - 1])
+
+            }
+            else
+            {
+                if (player.currentPlaylist != null)
                 {
-                    // Loop back to the first track
-                    player.controls.currentItem = player.currentPlaylist.Item[0];
-                }
-                else
-                {
-                    // Go to the next track
-                    player.controls.next();
-                }
-                currentMusicIndex = player.currentPlaylist.count;
+                    // Check if current track is the last track in the playlist
+                    if (player.controls.currentItem == player.currentPlaylist.Item[player.currentPlaylist.count - 1])
+                    {
+                        // Loop back to the first track
+                        player.controls.currentItem = player.currentPlaylist.Item[0];
+                    }
+                    else
+                    {
+                        // Go to the next track
+                        player.controls.next();
+                    }
+                    currentMusicIndex = player.currentPlaylist.count;
 
 
-                // Update label with current track information
-                /*                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
-                musicName = player.currentMedia.getItemInfo("Title");
-                musicmake = player.currentMedia.getItemInfo("Artist");
-                musicdisplay = musicName + " - " + musicmake;
-                //display album cover
-                UpdateAlbumCover();
+                    // Update label with current track information
+                    /*                musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
+                    musicName = player.currentMedia.getItemInfo("Title");
+                    musicmake = player.currentMedia.getItemInfo("Artist");
+                    musicdisplay = musicName + " - " + musicmake;
+                    //display album cover
+                    UpdateAlbumCover();
+                    SkipRegulator();
+                }
             }
         }
         //Mute button
@@ -405,13 +420,17 @@ namespace MusicMaster
             NewVersion.Visible = false;
             button3.Visible = false;
         }
+        //Regulate skippablitiy to let everything load after each skip
         private async Task SkipRegulator()
         {
-            for (skipdelay = 2; skipdelay == 0;)
-            {
-                skipdelay = skipdelay - 1;
-                await Task.Delay(1000);
+            label6.Visible = true;
+            for (int i = 3; i > 0; i--) {
+                Skip.Enabled = false;
+                Back.Enabled = false;
+                await Task.Delay(200);
             }
+            Skip.Enabled = true;
+            Back.Enabled = true;
         }
     }
 }

@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MusicMaster/1.1.4.1": {
+      "MusicMaster/1.1.4.4": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "TagLibSharp": "2.3.0"
@@ -34,7 +34,7 @@
     }
   },
   "libraries": {
-    "MusicMaster/1.1.4.1": {
+    "MusicMaster/1.1.4.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

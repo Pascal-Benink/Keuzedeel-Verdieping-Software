@@ -1,2 +1,3 @@
 ﻿To Do List:
 Een readme maken
+Op de Codeing enterprice site een download maken naar MusicMaster.msi voor altijd de laatste release

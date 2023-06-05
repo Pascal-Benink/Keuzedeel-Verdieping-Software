@@ -1,3 +1,4 @@
 ﻿To Do List:
-Een readme maken
-Op de Codeing enterprice site een download maken naar MusicMaster.msi voor altijd de laatste release
+01 - fix fast skip
+02 - Een readme maken
+03 - Op de Codeing enterprice site een download maken naar MusicMaster.msi voor altijd de laatste release

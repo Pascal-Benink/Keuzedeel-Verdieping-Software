@@ -7,9 +7,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>MusicMaster</Title>
-	  <Version>1.1.4.2</Version>
-	  <AssemblyVersion>1.1.4.2</AssemblyVersion>
-	  <FileVersion>1.1.4.2</FileVersion>
+	  <Version>1.1.4.3</Version>
+	  <AssemblyVersion>1.1.4.3</AssemblyVersion>
+	  <FileVersion>1.1.4.3</FileVersion>
 	  <Copyright>Copyright © 2023</Copyright>
   </PropertyGroup>
 

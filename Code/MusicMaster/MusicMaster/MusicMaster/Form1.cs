@@ -36,6 +36,7 @@ namespace MusicMaster
         string musicFolderPathdefault = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
         string musicFolderPath;
         bool playing = false;
+        int skipdelay;
         public Form1()
         {
             // InitializeComponent needs to be first
@@ -398,11 +399,19 @@ namespace MusicMaster
                 UseShellExecute = true
             });
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
             NewVersion.Visible = false;
             button3.Visible = false;
+        }
+        private async Task SkipRegulator()
+        {
+            for (skipdelay = 2; skipdelay == 0;)
+            {
+                skipdelay = skipdelay - 1;
+                await Task.Delay(1000);
+            }
         }
     }
 }

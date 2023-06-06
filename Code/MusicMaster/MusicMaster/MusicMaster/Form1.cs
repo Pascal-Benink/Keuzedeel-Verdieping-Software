@@ -92,6 +92,7 @@ namespace MusicMaster
             {
                 player.controls.play();
                 NowPlaying.Text = "Now Playing: " + musicName;
+                playing = true;
             }
             else
             {
@@ -147,6 +148,8 @@ namespace MusicMaster
                     MusicFolder.Text = "Geen MuziekFolder gevonden";
                 }
             }
+            label6.Visible = true;
+            label6.Text = playing.ToString();
         }
         //change volume
         private void Volume_ValueChanged(object sender, EventArgs e)
@@ -168,6 +171,8 @@ namespace MusicMaster
             NowPlaying.Text = "Now Paused: " + musicdisplay;
             player.controls.pause();
             playing = false;
+            label6.Visible = true;
+            label6.Text = playing.ToString();
         }
         //stop button
         private void Stop_Click(object sender, EventArgs e)
@@ -446,7 +451,7 @@ namespace MusicMaster
                 {
                     PlayButton_Click(sender, e);
                 }
-                else
+                if (playing == true)
                 {
                     Pause_Click(sender, e);
                 }

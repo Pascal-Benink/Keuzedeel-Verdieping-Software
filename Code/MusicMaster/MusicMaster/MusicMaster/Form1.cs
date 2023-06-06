@@ -423,8 +423,8 @@ namespace MusicMaster
         //Regulate skippablitiy to let everything load after each skip
         private async Task SkipRegulator()
         {
-            label6.Visible = true;
-            for (int i = 3; i > 0; i--) {
+            for (int i = 3; i > 0; i--)
+            {
                 Skip.Enabled = false;
                 Back.Enabled = false;
                 await Task.Delay(200);

@@ -37,6 +37,7 @@ namespace MusicMaster
         string musicFolderPath;
         bool playing = false;
         int skipdelay;
+        bool skipable = true;
         public Form1()
         {
             // InitializeComponent needs to be first
@@ -52,6 +53,8 @@ namespace MusicMaster
             label3.Text = versiontxt;
             imgload();
             GetLatestRelease();
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
         }
         //make the statupscreen change pic end go away 
         private async Task imgload()
@@ -427,9 +430,46 @@ namespace MusicMaster
                 Skip.Enabled = false;
                 Back.Enabled = false;
                 await Task.Delay(200);
+                skipable = false;
             }
             Skip.Enabled = true;
             Back.Enabled = true;
+            skipable = true;
+        }
+        //Keybinds
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.MediaPlayPause)
+            {
+                //chenk if currently is playing
+                if (playing == false)
+                {
+                    PlayButton_Click(sender, e);
+                }
+                else
+                {
+                    Pause_Click(sender, e);
+                }
+            }
+            if (e.KeyCode == Keys.MediaNextTrack)
+            {
+                //chenk if currently is playing
+                if (skipable == true)
+                {
+                    Skip_Click(sender, e);
+                    skipable = false;
+                }
+                
+            }
+            if (e.KeyCode == Keys.MediaPreviousTrack)
+            {
+                //chenk if currently is playing
+                if (skipable == true)
+                {
+                    Back_Click(sender, e);
+                    skipable = false;
+                }   
+            }
         }
     }
 }

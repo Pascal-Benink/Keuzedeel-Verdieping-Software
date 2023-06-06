@@ -50,7 +50,6 @@ namespace MusicMaster
             var versiontxt = "V" + version;
             /*var versiontxt2 = "V" + version.Major + "." + version.Minor + " (build " + version.Build + ")";*/
             label3.Text = versiontxt;
-            var gitreleaseversion = "1.0.0.0";
             imgload();
             GetLatestRelease();
         }
@@ -336,7 +335,7 @@ namespace MusicMaster
                 else
                 {
                     // Clear the PictureBox if no album cover is available
-                    AlbumCover.Image = MusicMaster.Properties.Resources.DefaultAlbumCover;
+                    AlbumCover.Image = Properties.Resources.DefaultAlbumCover;
                     AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
@@ -379,7 +378,7 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v" + Assembly.GetExecutingAssembly().GetName().Version;
+                        string currentgithubversion = "v1.1.5.0";
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;

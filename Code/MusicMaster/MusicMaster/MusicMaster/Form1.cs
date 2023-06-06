@@ -93,6 +93,16 @@ namespace MusicMaster
                 player.controls.play();
                 NowPlaying.Text = "Now Playing: " + musicName;
                 playing = true;
+                Task.Run(async () =>
+                {
+                    while (playing == true)
+                    {
+                        //update music time
+                        UpdateMusicTimeDisplay();
+                        // wiat 200ms
+                        await Task.Delay(200);
+                    }
+                });
             }
             else
             {
@@ -451,7 +461,7 @@ namespace MusicMaster
                 {
                     PlayButton_Click(sender, e);
                 }
-                if (playing == true)
+                else if (playing == true)
                 {
                     Pause_Click(sender, e);
                 }

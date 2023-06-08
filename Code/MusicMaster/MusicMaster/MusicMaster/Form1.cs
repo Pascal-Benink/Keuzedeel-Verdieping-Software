@@ -384,7 +384,7 @@ namespace MusicMaster
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; MSIE 11.0; Windows NT 10.0; WOW64; Trident/7.0)");
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "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");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "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");
 
                 try
                 {
@@ -392,12 +392,12 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v1.1.5.0";
+                        string currentgithubversion = "v1.1.5.3";
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;
-                        label6.Visible = true;
-                        label6.Text = tagName;
+/*                        label6.Visible = true;
+                        label6.Text = tagName;*/
                         /*label6.Text = "Latest Release Tag: " + tagName;*/
                         if (tagName == currentgithubversion)
                         {
@@ -412,8 +412,8 @@ namespace MusicMaster
                         }
                     } else
                     {
-                        label6.Visible = true;
-                        label6.Text = "An error occurred: " + response.StatusCode.ToString();
+/*                        label6.Visible = true;
+                        label6.Text = "An error occurred: " + response.StatusCode.ToString();*/
                     }
                 }
                 catch (Exception ex)

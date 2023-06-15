@@ -21,3 +21,15 @@ C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-So
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\TagLibSharp.dll
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\obj\Debug\net6.0-windows\MusicMaster.csproj.CopyComplete
 C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster\bin\Debug\net6.0-windows\appsettings.json

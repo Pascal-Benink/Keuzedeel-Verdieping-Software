@@ -20,6 +20,8 @@ using System.Security.Policy;
 using System.Net.Http.Headers;
 using System.Windows;
 using TagLib.Mpeg;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace MusicMaster
 {
@@ -379,12 +381,23 @@ namespace MusicMaster
         //github version checker
         private async Task GetLatestRelease()
         {
+            
             string apiUrl = "https://api.github.com/repos/Pascal-Benink/MusicMaster/releases/latest";
 
             using (HttpClient client = new HttpClient())
             {
+
+
+                // Load the configuration from appsettings.json
+                IConfiguration config = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                
+                // Retrieve the API token from the configuration
+                string apiToken = config["ApiToken"];
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiToken);
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; MSIE 11.0; Windows NT 10.0; WOW64; Trident/7.0)");
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "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");
 
                 try
                 {
@@ -396,9 +409,9 @@ namespace MusicMaster
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;
-                        /*                        label6.Visible = true;
-                                                label6.Text = tagName;*/
-                        /*label6.Text = "Latest Release Tag: " + tagName;*/
+/*                        label6.Visible = true;
+                        label6.Text = tagName;
+                        label6.Text = "Latest Release Tag: " + tagName;*/
                         if (tagName == currentgithubversion)
                         {
                             // The current version is up to date
@@ -413,8 +426,8 @@ namespace MusicMaster
                     }
                     else
                     {
-                        /*                        label6.Visible = true;
-                                                label6.Text = "An error occurred: " + response.StatusCode.ToString();*/
+                        label6.Visible = true;
+                        label6.Text = "An error occurred: " + response.StatusCode.ToString();
                     }
                 }
                 catch (Exception ex)
@@ -427,12 +440,13 @@ namespace MusicMaster
 
         private void NewVersion_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/Pascal-Benink/MusicMaster/releases/latest";
+            string url = "https://github.com/Pascal-Benink/MusicMaster/releases/latest/download/MusicMaster.msi";
             Process.Start(new ProcessStartInfo
             {
                 FileName = url,
                 UseShellExecute = true
             });
+            Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -1,0 +1,15 @@
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\bin\Debug\net6.0\MusicMaster_Uninstaller.exe
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\bin\Debug\net6.0\MusicMaster_Uninstaller.deps.json
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\bin\Debug\net6.0\MusicMaster_Uninstaller.runtimeconfig.json
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\bin\Debug\net6.0\MusicMaster_Uninstaller.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\bin\Debug\net6.0\MusicMaster_Uninstaller.pdb
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.csproj.AssemblyReference.cache
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.AssemblyInfoInputs.cache
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.AssemblyInfo.cs
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.csproj.CoreCompileInputs.cache
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\refint\MusicMaster_Uninstaller.dll
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.pdb
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\MusicMaster_Uninstaller.genruntimeconfig.cache
+C:\Users\2sam2\OneDrive\Documenten\lj1\p4-Keuseverdiepen\Keuzedeel-Verdieping-Software\Code\MusicMaster\MusicMaster\MusicMaster_Uninstaller\obj\Debug\net6.0\ref\MusicMaster_Uninstaller.dll

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2023")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.5.6")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.5.6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.5.7")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicMaster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicMaster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.5.6")]

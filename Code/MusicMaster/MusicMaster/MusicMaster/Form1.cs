@@ -22,6 +22,7 @@ using System.Windows;
 using TagLib.Mpeg;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace MusicMaster
 {
@@ -381,20 +382,32 @@ namespace MusicMaster
         //github version checker
         private async Task GetLatestRelease()
         {
-            
+
             string apiUrl = "https://api.github.com/repos/Pascal-Benink/MusicMaster/releases/latest";
+            string pastebinUrl = "https://pastebin.com/rejAKTNB";
+            string apiToken = "";
+
+            using (var httpClient = new HttpClient())
+            {
+                try
+                {
+                    var response = await httpClient.GetAsync(pastebinUrl);
+                    response.EnsureSuccessStatusCode(); // Ensure successful response
+
+                    var htmlContent = await response.Content.ReadAsStringAsync();
+                    apiToken = ExtractApiToken(htmlContent);
+                    textBox1.Visible = true;
+                    textBox1.Text = apiToken;
+
+                }
+                catch (HttpRequestException ex)
+                {
+                    MessageBox.Show($"Failed to retrieve text: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
             using (HttpClient client = new HttpClient())
             {
-
-
-                // Load the configuration from appsettings.json
-                IConfiguration config = new ConfigurationBuilder()
-                    .AddJsonFile("appsettings.json")
-                    .Build();
-                
-                // Retrieve the API token from the configuration
-                string apiToken = config["ApiToken"];
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiToken);
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; MSIE 11.0; Windows NT 10.0; WOW64; Trident/7.0)");
@@ -405,13 +418,13 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v1.1.5.3";
+                        string currentgithubversion = "v1.1.5.0";
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;
-/*                        label6.Visible = true;
-                        label6.Text = tagName;
-                        label6.Text = "Latest Release Tag: " + tagName;*/
+                        /*                      label6.Visible = true;
+                                                label6.Text = tagName;
+                                                label6.Text = "Latest Release Tag: " + tagName;*/
                         if (tagName == currentgithubversion)
                         {
                             // The current version is up to date
@@ -435,6 +448,19 @@ namespace MusicMaster
                     label6.Visible = true;
                     label6.Text = "An error occurred: " + ex.Message;
                 }
+            }
+        }
+        public static string ExtractApiToken(string htmlContent)
+        {
+            string pattern = @"<div class=""de1"">([^<]+)</div>";
+            Match match = Regex.Match(htmlContent, pattern);
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else
+            {
+                return null;
             }
         }
 

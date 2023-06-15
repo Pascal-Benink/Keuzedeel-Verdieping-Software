@@ -56,6 +56,7 @@
             label6 = new Label();
             NewVersion = new Button();
             button3 = new Button();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
@@ -338,12 +339,20 @@
             button3.Visible = false;
             button3.Click += button3_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(153, 47);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 31);
+            textBox1.TabIndex = 29;
+            textBox1.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(543, 378);
-            Controls.Add(StartPic);
+            Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(NewVersion);
             Controls.Add(label6);
@@ -370,6 +379,7 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
+            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(565, 434);
@@ -413,5 +423,6 @@
         private Label label6;
         private Button NewVersion;
         private Button button3;
+        private TextBox textBox1;
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "79TYo9t/hHi6YJfckgjgiB6trXhx8YdQSdoEx2JRmZIGJ41GTPbGp0rz2kqU+ekd9OYnKoQDEAY0C4+hgGSrlg==",
+  "dgSpecHash": "GTM7aeRp2lIKOU0/AGsUFnYylzmu+EcFNFLruGyjLDlkUtG1/y8vfSxXCwZ4LHGhjIUWUqAMwUAIieeee6+Y/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\2sam2\\.nuget\\packages\\globalhotkeys\\1.0.0.6\\globalhotkeys.1.0.0.6.nupkg.sha512",
     "C:\\Users\\2sam2\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\2sam2\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\2sam2\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0\\microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",
@@ -18,5 +19,16 @@
     "C:\\Users\\2sam2\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\2sam2\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlobalHotkeys 1.0.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlobalHotkeys",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

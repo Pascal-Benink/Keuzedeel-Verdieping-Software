@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "GlobalHotkeys/1.0.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/Hotkeys.dll": {}
+        },
+        "runtime": {
+          "lib/Hotkeys.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -252,6 +261,18 @@
     }
   },
   "libraries": {
+    "GlobalHotkeys/1.0.0.6": {
+      "sha512": "pOBQKX7FL88ATBZuRkyBUr2YKWFsBGZ+pJvFbW1/U/q9bxcFFdzFpr5tqzOE4FnlqQwNbbyck3qeMHWAtyYGGA==",
+      "type": "package",
+      "path": "globalhotkeys/1.0.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "globalhotkeys.1.0.0.6.nupkg.sha512",
+        "globalhotkeys.nuspec",
+        "lib/Hotkeys.dll"
+      ]
+    },
     "Microsoft.Extensions.Configuration/7.0.0": {
       "sha512": "tldQUBWt/xeH2K7/hMPPo5g8zuLc3Ro9I5d4o/XrxvxOCA2EZBtW7bCHHTc49fcBtvB8tLAb/Qsmfrq+2SJ4vA==",
       "type": "package",
@@ -647,6 +668,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "GlobalHotkeys >= 1.0.0.6",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 7.0.0",
@@ -703,6 +725,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "GlobalHotkeys": {
+            "target": "Package",
+            "version": "[1.0.0.6, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[7.0.0, )"
@@ -750,5 +776,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlobalHotkeys 1.0.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlobalHotkeys",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

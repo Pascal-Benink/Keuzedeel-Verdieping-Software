@@ -23,6 +23,8 @@ using TagLib.Mpeg;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
+
 
 namespace MusicMaster
 {
@@ -41,6 +43,7 @@ namespace MusicMaster
         bool playing = false;
         int skipdelay;
         bool skipable = true;
+
         public Form1()
         {
             // InitializeComponent needs to be first

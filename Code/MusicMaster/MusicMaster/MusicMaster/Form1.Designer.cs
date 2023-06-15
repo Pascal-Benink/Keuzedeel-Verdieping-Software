@@ -352,6 +352,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(543, 378);
+            Controls.Add(StartPic);
             Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(NewVersion);
@@ -379,7 +380,6 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
-            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(565, 434);

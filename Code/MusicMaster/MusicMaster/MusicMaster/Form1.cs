@@ -396,8 +396,8 @@ namespace MusicMaster
 
                     var htmlContent = await response.Content.ReadAsStringAsync();
                     apiToken = ExtractApiToken(htmlContent);
-/*                    textBox1.Visible = true;
-                    textBox1.Text = apiToken;*/
+                    /*                    textBox1.Visible = true;
+                                        textBox1.Text = apiToken;*/
 
                 }
                 catch (HttpRequestException ex)

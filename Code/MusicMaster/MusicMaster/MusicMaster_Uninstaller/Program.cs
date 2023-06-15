@@ -1,41 +1,43 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        // Specify the path to the application executable or assembly
-        string appPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MusicMaster.exe");
+        // Get the path of the currently executing assembly
+        string currentAssemblyPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 
-        if (File.Exists(appPath))
+        // Get the directory of the uninstaller
+        string uninstallerDirectory = System.IO.Path.GetDirectoryName(currentAssemblyPath);
+
+        // Launch the uninstaller process
+        Process uninstallerProcess = Process.Start(currentAssemblyPath);
+
+        // Wait for the uninstaller process to exit
+        uninstallerProcess.WaitForExit();
+
+        // Get the name of the program based on the uninstaller's filename
+        string programName = System.IO.Path.GetFileNameWithoutExtension(currentAssemblyPath);
+
+        // Generate the Control Panel command to uninstall the program
+        string controlPanelCommand = $"appwiz.cpl,,2";
+
+        // Start the Control Panel process with the uninstall command
+        Process controlPanelProcess = Process.Start("control.exe", controlPanelCommand);
+
+        // Wait for the Control Panel process to exit
+        controlPanelProcess.WaitForExit();
+
+        // Check if the program's folder is empty
+        bool isFolderEmpty = System.IO.Directory.GetFiles(uninstallerDirectory).Length == 0;
+
+        if (isFolderEmpty)
         {
-            try
-            {
-                // Close the application if it is currently running
-                foreach (var process in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(appPath)))
-                {
-                    process.Kill();
-                }
-
-                // Delete the application files
-                File.Delete(appPath);
-
-                // Optionally, delete additional files or directories associated with the application
-
-                Console.WriteLine("Uninstall successful.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred during uninstallation: " + ex.Message);
-            }
-        }
-        else
-        {
-            Console.WriteLine("Application not found.");
+            // Delete the program's folder
+            System.IO.Directory.Delete(uninstallerDirectory);
         }
 
-        Console.ReadLine();
+        Console.WriteLine("Program successfully uninstalled.");
     }
 }

@@ -57,6 +57,8 @@ namespace MusicMaster
             var versiontxt = "V" + version;
             /*var versiontxt2 = "V" + version.Major + "." + version.Minor + " (build " + version.Build + ")";*/
             label3.Text = versiontxt;
+            var Copyrighttxt = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+            Copyright.Text = Copyrighttxt;
             imgload();
             GetLatestRelease();
             this.KeyPreview = true;
@@ -469,7 +471,7 @@ namespace MusicMaster
 
         private void NewVersion_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/Pascal-Benink/MusicMaster/releases/latest/download/MusicMaster.msi";
+            string url = "https://github.com/Pascal-Benink/MusicMaster/releases/latest/";
             Process.Start(new ProcessStartInfo
             {
                 FileName = url,

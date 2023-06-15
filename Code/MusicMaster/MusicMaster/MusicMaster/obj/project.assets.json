@@ -668,7 +668,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "GlobalHotkeys >= 1.0.0.6",
+      "GlobalHotKeys >= 1.0.0.6",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 7.0.0",
@@ -683,7 +683,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.1.6",
+    "version": "1.1.6.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\2sam2\\OneDrive\\Documenten\\lj1\\p4-Keuseverdiepen\\Keuzedeel-Verdieping-Software\\Code\\MusicMaster\\MusicMaster\\MusicMaster\\MusicMaster.csproj",
       "projectName": "MusicMaster",
@@ -725,7 +725,7 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "GlobalHotkeys": {
+          "GlobalHotKeys": {
             "target": "Package",
             "version": "[1.0.0.6, )"
           },

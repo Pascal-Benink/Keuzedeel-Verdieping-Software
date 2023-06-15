@@ -57,6 +57,7 @@
             NewVersion = new Button();
             button3 = new Button();
             textBox1 = new TextBox();
+            Copyright = new Label();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
@@ -188,7 +189,7 @@
             Mute.Location = new Point(393, 232);
             Mute.Name = "Mute";
             Mute.RightToLeft = RightToLeft.No;
-            Mute.Size = new Size(130, 49);
+            Mute.Size = new Size(142, 49);
             Mute.TabIndex = 14;
             Mute.Text = "Mute";
             Mute.UseVisualStyleBackColor = true;
@@ -199,7 +200,7 @@
             Unmute.Location = new Point(394, 287);
             Unmute.Name = "Unmute";
             Unmute.RightToLeft = RightToLeft.No;
-            Unmute.Size = new Size(130, 47);
+            Unmute.Size = new Size(141, 47);
             Unmute.TabIndex = 15;
             Unmute.Text = "Unmute";
             Unmute.UseVisualStyleBackColor = true;
@@ -228,7 +229,7 @@
             // 
             StartPic.BackgroundImageLayout = ImageLayout.Center;
             StartPic.Image = Properties.Resources.musicmaster___nocode;
-            StartPic.Location = new Point(-1, -1);
+            StartPic.Location = new Point(1, -1);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
             StartPic.Size = new Size(611, 614);
@@ -347,11 +348,22 @@
             textBox1.TabIndex = 29;
             textBox1.Visible = false;
             // 
+            // Copyright
+            // 
+            Copyright.AutoSize = true;
+            Copyright.Location = new Point(441, 344);
+            Copyright.Name = "Copyright";
+            Copyright.Size = new Size(91, 25);
+            Copyright.TabIndex = 30;
+            Copyright.Text = "Copyright";
+            Copyright.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(543, 378);
+            Controls.Add(Copyright);
             Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(NewVersion);
@@ -424,5 +436,6 @@
         private Button NewVersion;
         private Button button3;
         private TextBox textBox1;
+        private Label Copyright;
     }
 }

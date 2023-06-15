@@ -396,8 +396,8 @@ namespace MusicMaster
 
                     var htmlContent = await response.Content.ReadAsStringAsync();
                     apiToken = ExtractApiToken(htmlContent);
-                    textBox1.Visible = true;
-                    textBox1.Text = apiToken;
+/*                    textBox1.Visible = true;
+                    textBox1.Text = apiToken;*/
 
                 }
                 catch (HttpRequestException ex)
@@ -418,7 +418,7 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v1.1.5.0";
+                        string currentgithubversion = "v1.1.5.3";
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;

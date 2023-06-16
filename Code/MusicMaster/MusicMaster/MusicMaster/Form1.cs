@@ -24,6 +24,7 @@ using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 
 
 namespace MusicMaster
@@ -57,8 +58,6 @@ namespace MusicMaster
             var versiontxt = "V" + version;
             /*var versiontxt2 = "V" + version.Major + "." + version.Minor + " (build " + version.Build + ")";*/
             label3.Text = versiontxt;
-            var Copyrighttxt = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-            Copyright.Text = Copyrighttxt;
             imgload();
             GetLatestRelease();
             this.KeyPreview = true;

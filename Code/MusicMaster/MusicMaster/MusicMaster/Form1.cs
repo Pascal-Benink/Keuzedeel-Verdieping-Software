@@ -44,6 +44,7 @@ namespace MusicMaster
         bool playing = false;
         int skipdelay;
         bool skipable = true;
+        bool shuffler = false;
 
         public Form1()
         {
@@ -533,5 +534,6 @@ namespace MusicMaster
                 }
             }
         }
+        //Shuffle has been removed
     }
 }

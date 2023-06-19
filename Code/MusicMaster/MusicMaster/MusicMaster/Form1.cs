@@ -25,6 +25,7 @@ using System.Configuration;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using System.Text.Json;
+using System.Numerics;
 
 
 namespace MusicMaster
@@ -95,6 +96,10 @@ namespace MusicMaster
         //play button
         private void PlayButton_Click(object sender, EventArgs e)
         {
+            Player();
+        }
+        public void Player()
+        {
             //check if music has been started in this instance
             if (start == true)
             {
@@ -127,6 +132,11 @@ namespace MusicMaster
                         {
                             IWMPMedia media = player.newMedia(musicFile);
                             playlist.appendItem(media);
+
+                            string artist = media.getItemInfo("Artist");
+                            string title = media.getItemInfo("Title");
+                            string musicFileName = $"{artist} - {title}";
+                            playlistListBox.Items.Add(musicFileName);
                         }
 
                         player.currentPlaylist = playlist;
@@ -155,6 +165,12 @@ namespace MusicMaster
                                 await Task.Delay(200);
                             }
                         });
+
+                        //play sellected song
+                        if (currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
+                        {
+                            player.controls.playItem(player.currentPlaylist.Item[currentMusicIndex]);
+                        }
                     }
                     else
                     {
@@ -180,6 +196,10 @@ namespace MusicMaster
         }
         //pause button
         private void Pause_Click(object sender, EventArgs e)
+        {
+            Pauser();
+        }
+        public void Pauser()
         {
             musicName = player.currentMedia.getItemInfo("Title");
             musicmake = player.currentMedia.getItemInfo("Artist");
@@ -305,16 +325,17 @@ namespace MusicMaster
                 NowPlaying.Text = "Now Playing: " + musicdisplay;
                 //display album cover
                 UpdateAlbumCover();
-
                 UpdateMusicTotalTimeDisplay();
+
+                playlistListBox.SelectedIndex = currentMusicIndex;
             }
         }
-
+        //let it stay-no function
         private void StartPic_Click(object sender, EventArgs e)
         {
 
         }
-        //let it stay-no function
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -534,6 +555,25 @@ namespace MusicMaster
                 }
             }
         }
+        //select a specific musicfile
+        private void playlistListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (playlistListBox.SelectedItem != null)
+            {
+                string selectedSong = playlistListBox.SelectedItem.ToString();
+                MessageBox.Show("Selected Song: " + selectedSong);
+                currentMusicIndex = playlistListBox.SelectedIndex;
+                if (currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
+                {
+                    player.controls.playItem(player.currentPlaylist.Item[currentMusicIndex]);
+                    if (playing == false)
+                    {
+                        Player();
+                    }
+                }
+            }
+        }
         //Shuffle has been removed
     }
 }
+

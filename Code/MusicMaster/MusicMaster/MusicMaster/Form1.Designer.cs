@@ -58,6 +58,7 @@
             button3 = new Button();
             textBox1 = new TextBox();
             Copyright = new Label();
+            playlistListBox = new ListBox();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
@@ -229,11 +230,11 @@
             // 
             StartPic.BackgroundImageLayout = ImageLayout.Center;
             StartPic.Image = Properties.Resources.musicmaster___nocode;
-            StartPic.Location = new Point(1, -1);
+            StartPic.Location = new Point(-15, -8);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
-            StartPic.Size = new Size(611, 614);
-            StartPic.SizeMode = PictureBoxSizeMode.AutoSize;
+            StartPic.Size = new Size(958, 614);
+            StartPic.SizeMode = PictureBoxSizeMode.CenterImage;
             StartPic.TabIndex = 18;
             StartPic.TabStop = false;
             StartPic.Click += StartPic_Click;
@@ -322,7 +323,7 @@
             // 
             NewVersion.Location = new Point(-1, 113);
             NewVersion.Name = "NewVersion";
-            NewVersion.Size = new Size(541, 128);
+            NewVersion.Size = new Size(944, 128);
             NewVersion.TabIndex = 27;
             NewVersion.Text = "Version {tagName} of MusicMaster Is Out Click Here To Download\" +\r\n$\" You Rurrent version is {currentgithubversion}";
             NewVersion.UseVisualStyleBackColor = true;
@@ -331,7 +332,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(181, 239);
+            button3.Location = new Point(408, 239);
             button3.Name = "button3";
             button3.Size = new Size(180, 34);
             button3.TabIndex = 28;
@@ -358,15 +359,27 @@
             Copyright.Text = "Copyright";
             Copyright.Visible = false;
             // 
+            // playlistListBox
+            // 
+            playlistListBox.FormattingEnabled = true;
+            playlistListBox.ItemHeight = 25;
+            playlistListBox.Location = new Point(546, 12);
+            playlistListBox.Name = "playlistListBox";
+            playlistListBox.Size = new Size(378, 354);
+            playlistListBox.TabIndex = 31;
+            playlistListBox.SelectedIndexChanged += playlistListBox_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 378);
+            ClientSize = new Size(936, 378);
+            Controls.Add(StartPic);
+            Controls.Add(NewVersion);
+            Controls.Add(playlistListBox);
             Controls.Add(Copyright);
             Controls.Add(textBox1);
             Controls.Add(button3);
-            Controls.Add(NewVersion);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(AlbumCover);
@@ -391,10 +404,8 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
-            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(565, 434);
             MinimumSize = new Size(565, 434);
             Name = "Form1";
             Text = "MusicMaster";
@@ -437,5 +448,6 @@
         private Button button3;
         private TextBox textBox1;
         private Label Copyright;
+        private ListBox playlistListBox;
     }
 }

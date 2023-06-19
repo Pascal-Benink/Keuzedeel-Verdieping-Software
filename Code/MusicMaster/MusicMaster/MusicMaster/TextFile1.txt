@@ -2,3 +2,6 @@
 01 - fix fast skip - done
 02 - Een readme maken
 03 - Op de Codeing enterprice site een download maken naar MusicMaster.msi voor altijd de laatste release - done
+
+Commit Conventions:
+Internal Version 1.1.6.5 (Prep for public 1.2.0.0)

@@ -5,3 +5,6 @@
 
 Commit Conventions:
 Internal Version 1.1.6.5 (Prep for public 1.2.0.0)
+
+Change Log 1.2.0.0:
+Add sellect list

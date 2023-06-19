@@ -59,6 +59,8 @@
             textBox1 = new TextBox();
             Copyright = new Label();
             playlistListBox = new ListBox();
+            bugreport = new Label();
+            link = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StartPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
@@ -369,16 +371,39 @@
             playlistListBox.TabIndex = 31;
             playlistListBox.SelectedIndexChanged += playlistListBox_SelectedIndexChanged;
             // 
+            // bugreport
+            // 
+            bugreport.AutoSize = true;
+            bugreport.Location = new Point(108, 344);
+            bugreport.Name = "bugreport";
+            bugreport.Size = new Size(253, 25);
+            bugreport.TabIndex = 32;
+            bugreport.Text = "You can report bugs using this";
+            bugreport.Click += bugreport_Click;
+            // 
+            // link
+            // 
+            link.AutoSize = true;
+            link.Location = new Point(367, 344);
+            link.Name = "link";
+            link.Size = new Size(43, 25);
+            link.TabIndex = 33;
+            link.TabStop = true;
+            link.Text = "link.";
+            link.VisitedLinkColor = Color.Blue;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 378);
+            Controls.Add(link);
+            Controls.Add(bugreport);
+            Controls.Add(button3);
             Controls.Add(NewVersion);
             Controls.Add(playlistListBox);
             Controls.Add(Copyright);
             Controls.Add(textBox1);
-            Controls.Add(button3);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(AlbumCover);
@@ -450,5 +475,7 @@
         private TextBox textBox1;
         private Label Copyright;
         private ListBox playlistListBox;
+        private Label bugreport;
+        private LinkLabel link;
     }
 }

@@ -573,6 +573,11 @@ namespace MusicMaster
                 }
             }
         }
+
+        private void bugreport_Click(object sender, EventArgs e)
+        {
+
+        }
         //Shuffle has been removed
     }
 }

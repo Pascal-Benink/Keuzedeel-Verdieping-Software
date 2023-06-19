@@ -4,7 +4,7 @@
 03 - Op de Codeing enterprice site een download maken naar MusicMaster.msi voor altijd de laatste release - done
 
 Commit Conventions:
-Internal Version 1.1.6.5 (Prep for public 1.2.0.0)
+Internal Version 1.1.6.7 (Prep for public 1.2.0.0)
 
 Change Log 1.2.0.0:
 Add sellect list

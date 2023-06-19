@@ -374,7 +374,6 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 378);
-            Controls.Add(StartPic);
             Controls.Add(NewVersion);
             Controls.Add(playlistListBox);
             Controls.Add(Copyright);
@@ -404,8 +403,10 @@
             Controls.Add(label2);
             Controls.Add(MusicFolderConfirm);
             Controls.Add(MusicFolder);
+            Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MaximumSize = new Size(958, 434);
             MinimumSize = new Size(565, 434);
             Name = "Form1";
             Text = "MusicMaster";

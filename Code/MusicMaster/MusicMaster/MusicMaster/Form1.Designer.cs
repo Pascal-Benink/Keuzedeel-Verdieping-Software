@@ -235,7 +235,7 @@
             StartPic.Location = new Point(-15, -8);
             StartPic.Name = "StartPic";
             StartPic.Padding = new Padding(145, 0, 0, 0);
-            StartPic.Size = new Size(958, 614);
+            StartPic.Size = new Size(1011, 614);
             StartPic.SizeMode = PictureBoxSizeMode.CenterImage;
             StartPic.TabIndex = 18;
             StartPic.TabStop = false;
@@ -325,7 +325,7 @@
             // 
             NewVersion.Location = new Point(-1, 113);
             NewVersion.Name = "NewVersion";
-            NewVersion.Size = new Size(944, 128);
+            NewVersion.Size = new Size(997, 128);
             NewVersion.TabIndex = 27;
             NewVersion.Text = "Version {tagName} of MusicMaster Is Out Click Here To Download\" +\r\n$\" You Rurrent version is {currentgithubversion}";
             NewVersion.UseVisualStyleBackColor = true;
@@ -334,7 +334,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(408, 239);
+            button3.Location = new Point(411, 239);
             button3.Name = "button3";
             button3.Size = new Size(180, 34);
             button3.TabIndex = 28;
@@ -367,7 +367,7 @@
             playlistListBox.ItemHeight = 25;
             playlistListBox.Location = new Point(546, 12);
             playlistListBox.Name = "playlistListBox";
-            playlistListBox.Size = new Size(378, 354);
+            playlistListBox.Size = new Size(450, 354);
             playlistListBox.TabIndex = 31;
             playlistListBox.SelectedIndexChanged += playlistListBox_SelectedIndexChanged;
             // 
@@ -384,19 +384,20 @@
             // link
             // 
             link.AutoSize = true;
-            link.Location = new Point(367, 344);
+            link.Location = new Point(354, 344);
             link.Name = "link";
             link.Size = new Size(43, 25);
             link.TabIndex = 33;
             link.TabStop = true;
             link.Text = "link.";
             link.VisitedLinkColor = Color.Blue;
+            link.LinkClicked += link_LinkClicked;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 378);
+            ClientSize = new Size(1005, 378);
             Controls.Add(link);
             Controls.Add(bugreport);
             Controls.Add(button3);
@@ -431,7 +432,6 @@
             Controls.Add(StartPic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(958, 434);
             MinimumSize = new Size(565, 434);
             Name = "Form1";
             Text = "MusicMaster";

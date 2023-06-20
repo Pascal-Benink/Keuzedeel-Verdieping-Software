@@ -46,6 +46,8 @@ namespace MusicMaster
         int skipdelay;
         bool skipable = true;
         bool shuffler = false;
+        string pastdis;
+        private int previousMusicIndex = -1;
 
         public Form1()
         {
@@ -58,6 +60,8 @@ namespace MusicMaster
             musicFolderPath = musicFolderPathdefault;
             var version = Assembly.GetExecutingAssembly().GetName().Version;
             var versiontxt = "V" + version;
+            /*            string copyright = GetCopyrightInformation();
+                        Copyright.Text = copyright;*/
             /*var versiontxt2 = "V" + version.Major + "." + version.Minor + " (build " + version.Build + ")";*/
             label3.Text = versiontxt;
             imgload();
@@ -165,7 +169,7 @@ namespace MusicMaster
                                 await Task.Delay(200);
                             }
                         });
-
+                        ModifyplayListbox_first();
                         //play sellected song
                         if (currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
                         {
@@ -248,6 +252,7 @@ namespace MusicMaster
                     NowPlaying.Text = "Now Playing: " + musicdisplay;
                     //display album cover
                     UpdateAlbumCover();
+                    ModifyplayListboxlist();
                     SkipRegulator();
                 }
             }
@@ -284,6 +289,7 @@ namespace MusicMaster
                     musicdisplay = musicName + " - " + musicmake;
                     //display album cover
                     UpdateAlbumCover();
+                    ModifyplayListboxlist();
                     SkipRegulator();
                 }
             }
@@ -321,19 +327,48 @@ namespace MusicMaster
                 /*musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
                 musicName = player.currentMedia.getItemInfo("Title");
                 musicmake = player.currentMedia.getItemInfo("Artist");
-                musicdisplay = musicName + " - " + musicmake;
+                musicdisplay = musicmake + " - " + musicName;
                 NowPlaying.Text = "Now Playing: " + musicdisplay;
+
+
+                ModifyplayListbox();
+
+
                 //display album cover
                 UpdateAlbumCover();
                 UpdateMusicTotalTimeDisplay();
-
                 playlistListBox.SelectedIndex = currentMusicIndex;
+                
+
+
             }
+        }
+        //modify music index
+        private void ModifyplayListbox()
+        {
+            string lastdisplay;
+
+            if (previousMusicIndex != -1)
+            {
+                lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
+                lastdisplay = lastdisplay.Replace("@ ", string.Empty);
+                playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+            }
+            currentMusicIndex = playlistListBox.SelectedIndex;
+
+            playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
+
+            previousMusicIndex = currentMusicIndex;
+        }
+        private void ModifyplayListbox_first()
+        {
+            playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
+            previousMusicIndex = currentMusicIndex;
         }
         //let it stay-no function
         private void StartPic_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -560,15 +595,19 @@ namespace MusicMaster
         {
             if (playlistListBox.SelectedItem != null)
             {
-                string selectedSong = playlistListBox.SelectedItem.ToString();
-                MessageBox.Show("Selected Song: " + selectedSong);
-                currentMusicIndex = playlistListBox.SelectedIndex;
-                if (currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
+                var wantedMusicIndex = playlistListBox.SelectedIndex;
+                if (wantedMusicIndex != previousMusicIndex)
                 {
-                    player.controls.playItem(player.currentPlaylist.Item[currentMusicIndex]);
-                    if (playing == false)
+                    string selectedSong = playlistListBox.SelectedItem.ToString();
+                    /*MessageBox.Show("Selected Song: " + selectedSong);*/
+                    currentMusicIndex = playlistListBox.SelectedIndex;
+                    if (currentMusicIndex >= 0 && currentMusicIndex < musicFiles.Length)
                     {
-                        Player();
+                        player.controls.playItem(player.currentPlaylist.Item[currentMusicIndex]);
+                        if (playing == false)
+                        {
+                            Player();
+                        }
                     }
                 }
             }
@@ -578,6 +617,30 @@ namespace MusicMaster
         {
 
         }
+
+        private void link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://pascal-benink.github.io/Coding-enterprice-main/Musicmaster.html";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+        //get copyright info
+        /*        static string GetCopyrightInformation()
+                {
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+                    object[] attributes = assembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+
+                    if (attributes.Length > 0)
+                    {
+                        AssemblyCompanyAttribute companyAttribute = (AssemblyCompanyAttribute)attributes[0];
+                        return companyAttribute.Company;
+                    }
+
+                    return string.Empty;
+                }*/
         //Shuffle has been removed
     }
 }

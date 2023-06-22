@@ -48,6 +48,8 @@ namespace MusicMaster
         bool shuffler = false;
         string pastdis;
         private int previousMusicIndex = -1;
+        bool ThisOneIsSellected = false;
+        bool BeenUsed = false;
 
         public Form1()
         {
@@ -252,7 +254,6 @@ namespace MusicMaster
                     NowPlaying.Text = "Now Playing: " + musicdisplay;
                     //display album cover
                     UpdateAlbumCover();
-                    ModifyplayListboxlist();
                     SkipRegulator();
                 }
             }
@@ -289,7 +290,6 @@ namespace MusicMaster
                     musicdisplay = musicName + " - " + musicmake;
                     //display album cover
                     UpdateAlbumCover();
-                    ModifyplayListboxlist();
                     SkipRegulator();
                 }
             }
@@ -347,18 +347,41 @@ namespace MusicMaster
         private void ModifyplayListbox()
         {
             string lastdisplay;
-
-            if (previousMusicIndex != -1)
+            //so not every song goes into the location of i song
+            if (ThisOneIsSellected == true)
             {
-                lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
-                lastdisplay = lastdisplay.Replace("@ ", string.Empty);
-                playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+                if (previousMusicIndex != currentMusicIndex)
+                {
+/*                    if (previousMusicIndex != -1)
+                    {
+                        lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
+                        lastdisplay = lastdisplay.Replace("@ ", string.Empty);
+                        playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+                    }*/
+                    currentMusicIndex = playlistListBox.SelectedIndex;
+
+                    playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
+                    BeenUsed = true;
+                }
             }
-            currentMusicIndex = playlistListBox.SelectedIndex;
-
-            playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
-
+            else if (ThisOneIsSellected == false && BeenUsed == false)
+            {
+                if (previousMusicIndex != -1)
+                {
+                    lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
+                    lastdisplay = lastdisplay.Replace("@ ", string.Empty);
+                    playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+                }
+            }
+            ThisOneIsSellected = false;
             previousMusicIndex = currentMusicIndex;
+            BeenUsedFix();
+        }
+        //beenusedfix after ModifyplayListbox is fully done
+        private async Task BeenUsedFix()
+        {
+            await Task.Delay(600);
+            BeenUsed = false;
         }
         private void ModifyplayListbox_first()
         {
@@ -598,6 +621,7 @@ namespace MusicMaster
                 var wantedMusicIndex = playlistListBox.SelectedIndex;
                 if (wantedMusicIndex != previousMusicIndex)
                 {
+                    ThisOneIsSellected = true;
                     string selectedSong = playlistListBox.SelectedItem.ToString();
                     /*MessageBox.Show("Selected Song: " + selectedSong);*/
                     currentMusicIndex = playlistListBox.SelectedIndex;

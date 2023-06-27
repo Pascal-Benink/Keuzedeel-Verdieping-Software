@@ -122,6 +122,8 @@ namespace MusicMaster
                         await Task.Delay(200);
                     }
                 });
+                label6.Visible = true;
+                label6.Text = "fromstarttrue";
             }
             else
             {
@@ -155,7 +157,7 @@ namespace MusicMaster
                         musicdisplay = musicName + " - " + musicmake;
                         NowPlaying.Text = "Now Playing: " + musicdisplay;
                         //display album cover
-                        currentMusicIndex = player.currentPlaylist.count;
+                        currentMusicIndex = 0;
                         UpdateAlbumCover();
 
                         UpdateMusicTotalTimeDisplay();
@@ -330,7 +332,6 @@ namespace MusicMaster
                 musicdisplay = musicmake + " - " + musicName;
                 NowPlaying.Text = "Now Playing: " + musicdisplay;
 
-
                 ModifyplayListbox();
 
 
@@ -338,8 +339,6 @@ namespace MusicMaster
                 UpdateAlbumCover();
                 UpdateMusicTotalTimeDisplay();
                 playlistListBox.SelectedIndex = currentMusicIndex;
-                
-
 
             }
         }
@@ -352,11 +351,9 @@ namespace MusicMaster
             {
                 if (previousMusicIndex != currentMusicIndex)
                 {
-/*                    if (previousMusicIndex != -1)
+                    /*if (previousMusicIndex != -1)
                     {
-                        lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
-                        lastdisplay = lastdisplay.Replace("@ ", string.Empty);
-                        playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+                        has been moved to line 375 - 380
                     }*/
                     currentMusicIndex = playlistListBox.SelectedIndex;
 
@@ -373,6 +370,15 @@ namespace MusicMaster
                     playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
                 }
             }
+            //been moved from line 355 for usability reasons
+/*            if (ThisOneIsSellected == true && previousMusicIndex != currentMusicIndex && previousMusicIndex != -1)
+            {
+                lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
+                lastdisplay = lastdisplay.Replace("@ ", string.Empty);
+                playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
+            }*/
+            label6.Visible = true;
+            label6.Text = "werkt";
             ThisOneIsSellected = false;
             previousMusicIndex = currentMusicIndex;
             BeenUsedFix();

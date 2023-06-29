@@ -418,13 +418,13 @@ namespace MusicMaster
                     }*/
                     currentMusicIndex = playlistListBox.SelectedIndex;
 
-                    playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
+                    /*playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";*/
                     BeenUsed = true;
                 }
             }
             else if (ThisOneIsSellected == false && BeenUsed == false)
             {
-                playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";     
+                /*playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";   */
                 if (previousMusicIndex != -1)
                 {
                     lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
@@ -439,8 +439,8 @@ namespace MusicMaster
                 lastdisplay = lastdisplay.Replace("@ ", string.Empty);
                 playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
             }
-/*            label6.Visible = true;
-            label6.Text = "werkt";*/
+            /*            label6.Visible = true;
+                        label6.Text = "werkt";*/
             ThisOneIsSellected = false;
             previousMusicIndex = currentMusicIndex;
             BeenUsedFix();
@@ -453,13 +453,13 @@ namespace MusicMaster
         }
         private void ModifyplayListbox_first()
         {
-            playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
+            /*playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";*/
             previousMusicIndex = currentMusicIndex;
         }
         //let it stay-no function
         private void StartPic_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -570,7 +570,7 @@ namespace MusicMaster
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string currentgithubversion = "v1.1.6.0";
+                        string currentgithubversion = "v1.2.0.0";
                         string json = await response.Content.ReadAsStringAsync();
                         dynamic release = JsonConvert.DeserializeObject(json);
                         string tagName = release.tag_name;

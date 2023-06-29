@@ -157,7 +157,18 @@ namespace MusicMaster
                         musicdisplay = musicName + " - " + musicmake;
                         NowPlaying.Text = "Now Playing: " + musicdisplay;
                         //display album cover
-                        currentMusicIndex = 0;
+
+                        // Check if a playlist is loaded
+                        if (playlist != null)
+                        {
+                            // Retrieve the current media in the playlist
+                            IWMPMedia currentMedia = player.currentMedia;
+
+                            // Retrieve the index of the current media in the playlist
+                            currentMusicIndex = GetItemIndex(playlist, currentMedia);
+
+                            // Output the current index
+                        }
                         UpdateAlbumCover();
 
                         UpdateMusicTotalTimeDisplay();
@@ -257,7 +268,19 @@ namespace MusicMaster
                     //display album cover
                     UpdateAlbumCover();
                     SkipRegulator();
-                    currentMusicIndex = currentMusicIndex - 1;
+                    IWMPPlaylist playlist = player.currentPlaylist;
+
+                    // Check if a playlist is loaded
+                    if (playlist != null)
+                    {
+                        // Retrieve the current media in the playlist
+                        IWMPMedia currentMedia = player.currentMedia;
+
+                        // Retrieve the index of the current media in the playlist
+                        currentMusicIndex = GetItemIndex(playlist, currentMedia);
+
+                        // Output the current index
+                    }
                     label6.Visible = true;
                     label6.Text = currentMusicIndex.ToString();
                     ModifyplayListbox();
@@ -297,7 +320,19 @@ namespace MusicMaster
                     //display album cover
                     UpdateAlbumCover();
                     SkipRegulator();
-                    currentMusicIndex = currentMusicIndex + 1;
+                    IWMPPlaylist playlist = player.currentPlaylist;
+
+                    // Check if a playlist is loaded
+                    if (playlist != null)
+                    {
+                        // Retrieve the current media in the playlist
+                        IWMPMedia currentMedia = player.currentMedia;
+
+                        // Retrieve the index of the current media in the playlist
+                        currentMusicIndex = GetItemIndex(playlist, currentMedia);
+
+                        // Output the current index
+                    }
                     label6.Visible = true;
                     label6.Text = currentMusicIndex.ToString();
                     ModifyplayListbox();
@@ -335,7 +370,19 @@ namespace MusicMaster
             {
                 if (ThisOneIsSellected == false)
                 {
-                    currentMusicIndex = currentMusicIndex + 1;
+                    IWMPPlaylist playlist = player.currentPlaylist;
+
+                    // Check if a playlist is loaded
+                    if (playlist != null)
+                    {
+                        // Retrieve the current media in the playlist
+                        IWMPMedia currentMedia = player.currentMedia;
+
+                        // Retrieve the index of the current media in the playlist
+                        currentMusicIndex = GetItemIndex(playlist, currentMedia);
+
+                        // Output the current index
+                    }
                     label6.Visible = true;
                     label6.Text = currentMusicIndex.ToString();
                 }
@@ -377,6 +424,7 @@ namespace MusicMaster
             }
             else if (ThisOneIsSellected == false && BeenUsed == false)
             {
+                playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";     
                 if (previousMusicIndex != -1)
                 {
                     lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
@@ -385,14 +433,14 @@ namespace MusicMaster
                 }
             }
             //been moved from line 355 for usability reasons
-/*            if (ThisOneIsSellected == true && previousMusicIndex != currentMusicIndex && previousMusicIndex != -1)
+            if (ThisOneIsSellected == true && previousMusicIndex != currentMusicIndex && previousMusicIndex != -1)
             {
                 lastdisplay = playlistListBox.Items[previousMusicIndex].ToString();
                 lastdisplay = lastdisplay.Replace("@ ", string.Empty);
                 playlistListBox.Items[previousMusicIndex] = lastdisplay; // Set the previous item back to its original state
-            }*/
-            label6.Visible = true;
-            label6.Text = "werkt";
+            }
+/*            label6.Visible = true;
+            label6.Text = "werkt";*/
             ThisOneIsSellected = false;
             previousMusicIndex = currentMusicIndex;
             BeenUsedFix();
@@ -405,7 +453,6 @@ namespace MusicMaster
         }
         private void ModifyplayListbox_first()
         {
-            currentMusicIndex = 0;
             playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
             previousMusicIndex = currentMusicIndex;
         }
@@ -671,6 +718,17 @@ namespace MusicMaster
                 FileName = url,
                 UseShellExecute = true
             });
+        }
+        //get item index
+        static int GetItemIndex(IWMPPlaylist playlist, IWMPMedia currentItem)
+        {
+            for (int i = 0; i < playlist.count; i++)
+            {
+                IWMPMedia media = playlist.get_Item(i);
+                if (media.isIdentical[currentItem])
+                    return i;
+            }
+            return -1; // Current item not found in the playlist
         }
         //get copyright info
         /*        static string GetCopyrightInformation()

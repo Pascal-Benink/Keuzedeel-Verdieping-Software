@@ -257,6 +257,10 @@ namespace MusicMaster
                     //display album cover
                     UpdateAlbumCover();
                     SkipRegulator();
+                    currentMusicIndex = currentMusicIndex - 1;
+                    label6.Visible = true;
+                    label6.Text = currentMusicIndex.ToString();
+                    ModifyplayListbox();
                 }
             }
         }
@@ -293,6 +297,10 @@ namespace MusicMaster
                     //display album cover
                     UpdateAlbumCover();
                     SkipRegulator();
+                    currentMusicIndex = currentMusicIndex + 1;
+                    label6.Visible = true;
+                    label6.Text = currentMusicIndex.ToString();
+                    ModifyplayListbox();
                 }
             }
         }
@@ -325,6 +333,12 @@ namespace MusicMaster
             // Check if the new state is "playing"
             if ((WMPPlayState)NewState == WMPPlayState.wmppsPlaying)
             {
+                if (ThisOneIsSellected == false)
+                {
+                    currentMusicIndex = currentMusicIndex + 1;
+                    label6.Visible = true;
+                    label6.Text = currentMusicIndex.ToString();
+                }
                 // Update the NowPlaying label with the name of the current music file
                 /*musicName = Path.GetFileNameWithoutExtension(player.controls.currentItem.sourceURL);*/
                 musicName = player.currentMedia.getItemInfo("Title");
@@ -353,7 +367,7 @@ namespace MusicMaster
                 {
                     /*if (previousMusicIndex != -1)
                     {
-                        has been moved to line 375 - 380
+                        has been moved to down
                     }*/
                     currentMusicIndex = playlistListBox.SelectedIndex;
 
@@ -391,6 +405,7 @@ namespace MusicMaster
         }
         private void ModifyplayListbox_first()
         {
+            currentMusicIndex = 0;
             playlistListBox.Items[currentMusicIndex] = $"@ {musicdisplay}";
             previousMusicIndex = currentMusicIndex;
         }
